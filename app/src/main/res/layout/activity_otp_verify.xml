@@ -47,7 +47,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/img_main"
-                    android:layout_marginTop="@dimen/_20sdp"
                     android:gravity="center"
                     android:text="@string/verification"
                     android:textColor="@color/black" />
@@ -89,60 +88,56 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/dark_gray"
-                    android:hint="0"
-                    android:maxLength="1"
-                    android:inputType="number"
                     android:cursorVisible="true"
-                    android:paddingLeft="@dimen/_15sdp"
-                    android:paddingRight="@dimen/_15sdp"
+                    android:hint="0"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:paddingLeft="@dimen/_17sdp"
+                    android:paddingRight="@dimen/_17sdp"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp"
-                    android:textStyle="bold" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/et_otp_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_7sdp"
                     android:backgroundTint="@color/dark_gray"
                     android:hint="0"
-                    android:maxLength="1"
                     android:inputType="number"
-                    android:paddingLeft="@dimen/_15sdp"
-                    android:paddingRight="@dimen/_15sdp"
-                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:maxLength="1"
+                    android:paddingLeft="@dimen/_17sdp"
+                    android:paddingRight="@dimen/_17sdp"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp"
-                    android:textStyle="bold" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/et_otp_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_7sdp"
                     android:backgroundTint="@color/dark_gray"
                     android:hint="0"
-                    android:maxLength="1"
                     android:inputType="number"
-                    android:layout_marginLeft="@dimen/_7sdp"
-                    android:paddingLeft="@dimen/_15sdp"
-                    android:paddingRight="@dimen/_15sdp"
+                    android:maxLength="1"
+                    android:paddingLeft="@dimen/_17sdp"
+                    android:paddingRight="@dimen/_17sdp"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp"
-                    android:textStyle="bold" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/et_otp_4"
-                    android:maxLength="1"
-                    android:layout_marginLeft="@dimen/_7sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_7sdp"
                     android:backgroundTint="@color/dark_gray"
                     android:hint="0"
                     android:inputType="number"
+                    android:maxLength="1"
+                    android:paddingLeft="@dimen/_17sdp"
+                    android:paddingRight="@dimen/_17sdp"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp"
-                    android:textStyle="bold"
-                    android:paddingLeft="@dimen/_15sdp"
-                    android:paddingRight="@dimen/_15sdp"/>
+                   android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
 
             </LinearLayout>
@@ -159,6 +154,7 @@
                 android:gravity="center"
                 android:text="Continue"
                 android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white" />
 
         </RelativeLayout>
