@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.pay.paygl.Activity.OtpVerifyActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <RelativeLayout
+                android:id="@+id/rl_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    android:id="@+id/app_bar"
+                    layout="@layout/app_bar_otp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_1">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/app_logo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_main"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:text="@string/verification"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_descrip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_register"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:text="@string/enter_no" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/otp_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_descrip"
+                    android:gravity="center"
+                    android:text="@string/number" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_2"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_otp_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/dark_gray"
+                    android:hint="0"
+                    android:maxLength="1"
+                    android:inputType="number"
+                    android:cursorVisible="true"
+                    android:paddingLeft="@dimen/_15sdp"
+                    android:paddingRight="@dimen/_15sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_otp_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/dark_gray"
+                    android:hint="0"
+                    android:maxLength="1"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/_15sdp"
+                    android:paddingRight="@dimen/_15sdp"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_otp_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/dark_gray"
+                    android:hint="0"
+                    android:maxLength="1"
+                    android:inputType="number"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:paddingLeft="@dimen/_15sdp"
+                    android:paddingRight="@dimen/_15sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_otp_4"
+                    android:maxLength="1"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/dark_gray"
+                    android:hint="0"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold"
+                    android:paddingLeft="@dimen/_15sdp"
+                    android:paddingRight="@dimen/_15sdp"/>
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll1"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_marginRight="@dimen/_30sdp"
+                android:background="@drawable/btn_gredient_style"
+                android:gravity="center"
+                android:text="Continue"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

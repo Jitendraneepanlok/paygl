@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_10sdp"
+    android:elevation="@dimen/_10sdp"
+    android:layout_margin="@dimen/_20sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_20sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_alert"
+            android:id="@+id/img_alert"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm_exit"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/img_alert"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/txt_confirm"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_logout"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/txt_confirm"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:paddingRight="@dimen/_10sdp"
+            android:text="@string/areyousure"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_logout"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginRight="@dimen/_70sdp"
+            android:text="@string/cancel"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_logout"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:text="@string/yes"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

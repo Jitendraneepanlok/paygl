@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.pay.paygl.Activity.WelcomeSliderActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gredient_style"
+        android:paddingBottom="@dimen/_150sdp">
+
+    </RelativeLayout>
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpIntroSlider"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/indicatorLayout" />
+
+    <com.mlm.payment.paygl.Helper.IndicatorLayout
+        android:id="@+id/indicatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ytft"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:indicatorCount="5" />
+
+    <RelativeLayout
+        android:id="@+id/ytft"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_20sdp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:background="@drawable/btn_gredient_style"
+            android:gravity="center"
+            android:text="Create Account"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_register"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/btn_login_style"
+            android:gravity="center"
+            android:text="Login to Account"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

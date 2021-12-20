@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.mlm.payment.paygl.Navigation.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <action android:id="@+id/action_HomeFragment_to_kycFragment"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:destination="@id/nav_kyc"/>
+
+        <action android:id="@+id/action_HomeFragment_to_galleryFragment"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:destination="@id/nav_gallery"/>
+
+        <action android:id="@+id/action_HomeFragment_to_moneyTransferFragment"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:destination="@id/nav_money_transfer"/>
+
+        <action android:id="@+id/action_HomeFragment_to_dthFragment"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:destination="@id/nav_dth"/>
+
+        <action android:id="@+id/action_HomeFragment_to_prepaidFragment"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:destination="@id/nav_prepaid"/>
+
+        <action android:id="@+id/action_HomeFragment_to_addFundFragment"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:destination="@id/nav_add_fund"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.mlm.payment.paygl.Navigation.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.mlm.payment.paygl.Navigation.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_add_bank"
+        android:name="com.mlm.payment.paygl.Navigation.ui.addBank.AddBankFragment"
+        android:label="@string/menu_addbank"
+        tools:layout="@layout/fragment_add_bank" />
+
+
+
+    <fragment
+        android:id="@+id/nav_contact_us"
+        android:name="com.mlm.payment.paygl.Navigation.ui.contactus.ContactusFragment"
+        android:label="@string/menu_contactus"
+        tools:layout="@layout/fragment_contact_us" />
+
+
+    <fragment
+        android:id="@+id/nav_kyc"
+        android:name="com.mlm.payment.paygl.Navigation.ui.kyc.KycFragment"
+        android:label="@string/menu_kyc"
+        tools:layout="@layout/fragment_kyc" />
+
+    <fragment
+        android:id="@+id/nav_money_transfer"
+        android:name="com.mlm.payment.paygl.Navigation.ui.moneyTransfer.MoneyTransferFragment"
+        android:label="@string/menu_money_transfer"
+        tools:layout="@layout/fragment_money_transfer" />
+
+    <fragment
+        android:id="@+id/nav_dth"
+        android:name="com.mlm.payment.paygl.Navigation.ui.dth.DthFragment"
+        android:label="@string/menu_dth"
+        tools:layout="@layout/fragment_dth" />
+
+    <fragment
+        android:id="@+id/nav_prepaid"
+        android:name="com.mlm.payment.paygl.Navigation.ui.prepaid.PrepaidFragment"
+        android:label="@string/menu_prepaid_recharge"
+        tools:layout="@layout/fragment_prepaid_recharge" />
+
+    <fragment
+        android:id="@+id/nav_welcome_letter"
+        android:name="com.mlm.payment.paygl.Navigation.ui.welcomelatter.WelcomeLatterFragment"
+        android:label="@string/menu_welcome_letter"
+        tools:layout="@layout/fragment_welcome_letter"/>
+
+
+    <fragment
+        android:id="@+id/nav_add_fund"
+        android:name="com.mlm.payment.paygl.Navigation.ui.addFund.AddFundFragment"
+        android:label="@string/menu_add_fund"
+        tools:layout="@layout/fragment_add_fund"/>
+</navigation>

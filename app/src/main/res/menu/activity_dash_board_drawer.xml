@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/dashboard"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_user"
+            android:title="@string/menu_gallery" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/change_password"
+            android:title="@string/menu_slideshow" />
+
+        <item
+            android:id="@+id/nav_add_bank"
+            android:icon="@drawable/ic_add_bank"
+            android:title="@string/menu_addbank" />
+
+        <item
+            android:id="@+id/nav_kyc"
+            android:icon="@drawable/customer_kyc"
+            android:title="@string/menu_kyc" />
+
+        <item
+            android:id="@+id/nav_welcome_letter"
+            android:icon="@drawable/ic_latter"
+            android:title="@string/menu_welcome_letter" />
+
+        <item
+            android:id="@+id/nav_contact_us"
+            android:icon="@drawable/contact_us"
+            android:title="@string/menu_contactus" />
+
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/ic_about_us"
+            android:title="@string/menu_aboutus" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/menu_logout" />
+
+    </group>
+</menu>
