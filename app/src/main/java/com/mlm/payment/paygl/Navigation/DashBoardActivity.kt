@@ -65,8 +65,10 @@ class DashBoardActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.appBarDashBoard.toolbar)
         sessionManager = SessionManager(applicationContext)
-        user_id = sessionManager.getUserData(SessionManager.User_Id).toString()
-        Log.e("Value", "" + user_id)
+        if (sessionManager.getUserData(SessionManager.User_Id)!=null) {
+            user_id = sessionManager.getUserData(SessionManager.User_Id).toString()
+            Log.e("Value", "" + user_id)
+        }
         getUserDetails()
         /* binding.appBarDashBoard.fab.setOnClickListener { view ->
              Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

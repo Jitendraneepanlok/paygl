@@ -139,7 +139,6 @@
                     android:textColor="@color/black"
                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
