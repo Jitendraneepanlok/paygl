@@ -9,7 +9,6 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical">
 
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -17,7 +16,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -89,7 +87,7 @@
                                     android:id="@+id/spinopratore"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:padding="@dimen/_15sdp" />
+                                    android:padding="@dimen/_10sdp" />
 
                             </RelativeLayout>
 
@@ -114,7 +112,9 @@
                                 android:paddingBottom="@dimen/_5sdp">
 
                                 <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etplan"
                                     android:layout_width="match_parent"
+                                    android:inputType="textImeMultiLine"
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentLeft="true"
                                     android:background="@color/ripple"
@@ -122,9 +122,8 @@
                                     android:drawableLeft="@drawable/ic_smartphone"
                                     android:drawablePadding="10dp"
                                     android:hint="@string/code"
-                                    android:inputType="text"
-                                    android:id="@+id/etcode"
                                     android:padding="@dimen/_10sdp"
+                                    android:focusable="false"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                                     android:textColor="@color/black"
                                     android:textColorHint="@color/black" />
@@ -151,6 +150,7 @@
                                 android:paddingBottom="@dimen/_5sdp">
 
                                 <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etnumber"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentLeft="true"
@@ -158,7 +158,6 @@
                                     android:backgroundTint="@color/ripple"
                                     android:drawableLeft="@drawable/ic_smartphone"
                                     android:drawablePadding="10dp"
-                                    android:id="@+id/etnumber"
                                     android:hint="@string/enter_number"
                                     android:inputType="number"
                                     android:padding="@dimen/_10sdp"
@@ -221,6 +220,7 @@
                             android:layout_marginBottom="@dimen/_30sdp"
                             android:background="@drawable/btn_gredient_style"
                             android:text="@string/submit"
+                            android:id="@+id/btnpay"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textColor="@color/white" />
 

@@ -11,6 +11,10 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
 
+        <argument
+            android:name="txt_ID"
+            app:argType="string" />
+
         <action android:id="@+id/action_HomeFragment_to_kycFragment"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:destination="@id/nav_kyc"/>

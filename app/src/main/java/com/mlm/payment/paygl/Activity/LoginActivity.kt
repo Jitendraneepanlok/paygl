@@ -106,7 +106,7 @@ class LoginActivity : AppCompatActivity() {
                             response.body()?.Paygl?.response,
                             Toast.LENGTH_SHORT
                         ).show()
-                        sessionManager = SessionManager(this@LoginActivity)
+                        sessionManager = SessionManager(applicationContext)
                         sessionManager.setValueBoolean(SessionManager.VALUE, ischecked)
                         sessionManager.setValue(
                             SessionManager.User_Id,

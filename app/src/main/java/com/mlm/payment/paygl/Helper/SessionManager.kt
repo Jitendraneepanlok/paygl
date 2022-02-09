@@ -52,6 +52,7 @@ class SessionManager(context: Context?) {
         var VALUE = "value"
         var User_Id = "txtuserID"
         var Login_Id = "txtLoginID"
+        var txtid = "txtid"
     }
 
     init {

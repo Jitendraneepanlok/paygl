@@ -1,19 +1,17 @@
 package com.mlm.payment.paygl.Adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.mlm.payment.paygl.Pojo.PayglXXXXXXXXX
 import com.mlm.payment.paygl.Pojo.Service
 import com.mlm.payment.paygl.R
-import com.pay.paygl.Helper.DataModel
-import java.util.ArrayList
+import com.pay.paygl.Helper.SessionManager
 
 
 class DashBoardAdapter(var context: Context) :RecyclerView.Adapter<DashBoardAdapter.ViewHolder>() {
@@ -21,6 +19,7 @@ class DashBoardAdapter(var context: Context) :RecyclerView.Adapter<DashBoardAdap
     var dataList = emptyList<Service>()
     private lateinit var mlistner : onItemClickedListner
     private lateinit var view : View
+    private lateinit var sessionManager: SessionManager
 
 
     internal fun setDataList(dataList: List<Service>) {
@@ -79,6 +78,15 @@ class DashBoardAdapter(var context: Context) :RecyclerView.Adapter<DashBoardAdap
                     .into(holder.dashboardicon)
             }
         }
+
+        if (data.txtid!=null){
+            val aa :String = data.txtid
+            Log.e("sa",""+aa)
+            sessionManager = SessionManager(context)
+            sessionManager.setValue(SessionManager.txtid,aa)
+        }
+
+
     }
 
     //  total count of items in the list

@@ -1,9 +1,10 @@
 package com.pay.paygl.Network
 
+import com.mlm.payment.paygl.Model.AppRechargeModel
 import com.mlm.payment.paygl.Model.DashBoardModel
-import com.mlm.payment.paygl.Navigation.DashBoardActivity
-import com.mlm.payment.paygl.Pojo.DashboardPageResponse
-import com.mlm.payment.paygl.Pojo.UserDetailsResponse
+import com.mlm.payment.paygl.Model.OperatorModel
+import com.mlm.payment.paygl.Model.PlanModel
+import com.mlm.payment.paygl.Pojo.*
 import com.pay.paygl.Model.*
 import com.pay.paygl.Pojo.*
 import retrofit2.Call
@@ -11,8 +12,6 @@ import retrofit2.http.*
 import okhttp3.RequestBody
 
 import okhttp3.MultipartBody
-
-import okhttp3.ResponseBody
 
 import retrofit2.http.POST
 
@@ -62,6 +61,19 @@ interface ApiInterface {
     fun ChangePass(@Body user: ChangePassModel): Call<ChangePasswordResponse>
 
     @POST("App_service")
-    fun getDashboardData(@Body user: DashBoardModel): Call<DashboardPageResponse>
+    fun getDashboardData(@Body user: DashBoardModel): Call<DashBoardPageResponse>
+
+// for operator
+    @POST("App_operator")
+    fun getOperatorData(@Body user: OperatorModel): Call<OperatorResponse>
+
+    // plan currenlt running
+    @POST("App_plan")
+    fun getplanData(@Body user: PlanModel): Call<PlanResponse>
+
+    // recharge api
+    @POST("App_recharge")
+    fun getRecharge(@Body user: AppRechargeModel): Call<AppRechargePojo>
+
 
 }

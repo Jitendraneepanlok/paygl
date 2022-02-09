@@ -22,8 +22,6 @@ import com.mlm.payment.paygl.Fragments.HomeSliderFragment
 import com.mlm.payment.paygl.Helper.IndicatorLayout
 import com.mlm.payment.paygl.Model.DashBoardModel
 import com.mlm.payment.paygl.Model.PayglXXXXXXXX
-import com.mlm.payment.paygl.Pojo.DashboardPageResponse
-import com.mlm.payment.paygl.Pojo.Service
 import com.mlm.payment.paygl.R
 import com.pay.paygl.Adapter.IntroSliderAdapter
 import com.pay.paygl.Network.ApiClient
@@ -34,6 +32,8 @@ import java.util.*
 import androidx.navigation.NavController
 import androidx.navigation.Navigation.*
 import androidx.navigation.findNavController
+import com.mlm.payment.paygl.Pojo.DashBoardPageResponse
+import com.mlm.payment.paygl.Pojo.Service
 import com.mlm.payment.paygl.Pojo.UserDetailsResponse
 import com.mlm.payment.paygl.databinding.FragmentHomeBinding
 import com.pay.paygl.Activity.LoginActivity
@@ -121,9 +121,9 @@ class HomeFragment : Fragment() {
                     Log.e("Response", "" + response.body()?.Paygl?.response)
                     var arraylist = ArrayList(response.body()?.Paygl?.News)
                     for (i in arraylist) {
-                        val jokeStringBuilder = StringBuilder()
-                        jokeStringBuilder.append(arraylist+ "");
-                        txtnews.setText(jokeStringBuilder.append("").toString()+i.txtnews)
+                        val stringBuilder = StringBuilder()
+                        stringBuilder.append(arraylist+ "");
+                        txtnews.setText(stringBuilder.append("").toString()+i.txtnews)
                         animation = AnimationUtils.loadAnimation(activity, R.anim.textanimation)
                         txtnews.startAnimation(animation)
                     }
@@ -163,8 +163,7 @@ class HomeFragment : Fragment() {
             indicatorLayout.setIndicatorCount(adapter.itemCount)
         }
         indicatorLayout.selectCurrentPosition(0)
-
-        /*After setting the adapter use the timer */
+        
         /*After setting the adapter use the timer */
         val handler = Handler()
         val Update = Runnable {
@@ -207,9 +206,9 @@ class HomeFragment : Fragment() {
 
         val apiInterface = ApiClient.getClient.getDashboardData(DashBoardModel(PayglXXXXXXXX()))
 
-        apiInterface.enqueue(object : retrofit2.Callback<DashboardPageResponse> {
+        apiInterface.enqueue(object : retrofit2.Callback<DashBoardPageResponse> {
 
-            override fun onResponse(call: Call<DashboardPageResponse>, response: Response<DashboardPageResponse>) {
+            override fun onResponse(call: Call<DashBoardPageResponse>, response: Response<DashBoardPageResponse>) {
 
                 if (response.isSuccessful) {
                     if (response.body()?.Paygl?.resMessage.equals("1")) {
@@ -260,7 +259,7 @@ class HomeFragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<DashboardPageResponse>, t: Throwable) {
+            override fun onFailure(call: Call<DashBoardPageResponse>, t: Throwable) {
                 Toast.makeText(activity, "" + t, Toast.LENGTH_SHORT).show()
                 Log.e("ResponseFail", "" + t)
                 pDialog.dismiss()

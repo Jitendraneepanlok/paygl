@@ -5,22 +5,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
-import com.mlm.payment.paygl.Adapter.DashBoardAdapter
-import com.mlm.payment.paygl.Helper.IndicatorLayout
-import com.mlm.payment.paygl.Navigation.ui.home.HomeViewModel
-import com.mlm.payment.paygl.Pojo.Service
 import com.mlm.payment.paygl.databinding.FragmentAddFundBinding
-import com.mlm.payment.paygl.databinding.FragmentHomeBinding
 import com.pay.paygl.Helper.SessionManager
-import java.util.*
-import kotlin.collections.ArrayList
 
 class AddFundFragment : Fragment() {
 

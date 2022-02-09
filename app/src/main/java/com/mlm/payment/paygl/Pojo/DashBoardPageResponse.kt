@@ -1,5 +1,5 @@
 package com.mlm.payment.paygl.Pojo
 
-data class DashboardPageResponse(
+data class DashBoardPageResponse(
     val Paygl: PayglXXXXXXXXX
 )
