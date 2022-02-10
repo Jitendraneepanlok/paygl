@@ -114,16 +114,16 @@
                                 <androidx.appcompat.widget.AppCompatEditText
                                     android:id="@+id/etplan"
                                     android:layout_width="match_parent"
-                                    android:inputType="textImeMultiLine"
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentLeft="true"
                                     android:background="@color/ripple"
                                     android:backgroundTint="@color/ripple"
                                     android:drawableLeft="@drawable/ic_smartphone"
                                     android:drawablePadding="10dp"
-                                    android:hint="@string/code"
-                                    android:padding="@dimen/_10sdp"
                                     android:focusable="false"
+                                    android:hint="@string/code"
+                                    android:inputType="textImeMultiLine"
+                                    android:padding="@dimen/_10sdp"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                                     android:textColor="@color/black"
                                     android:textColorHint="@color/black" />
@@ -211,6 +211,7 @@
 
 
                         <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnpay"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/card5"
@@ -220,7 +221,6 @@
                             android:layout_marginBottom="@dimen/_30sdp"
                             android:background="@drawable/btn_gredient_style"
                             android:text="@string/submit"
-                            android:id="@+id/btnpay"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textColor="@color/white" />
 

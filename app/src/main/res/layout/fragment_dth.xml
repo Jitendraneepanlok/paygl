@@ -90,7 +90,7 @@
                                     android:layout_height="wrap_content"
                                     android:id="@+id/img_dth"
                                     android:layout_marginLeft="15dp"
-                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_marginTop="@dimen/_7sdp"
                                     android:layout_marginBottom="@dimen/_5sdp"
                                     android:src="@drawable/ic_dish"/>
 
@@ -98,8 +98,9 @@
                                     android:id="@+id/spinopratore"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:padding="@dimen/_15sdp"
-                                    android:layout_marginLeft="@dimen/_35sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:layout_toRightOf="@+id/img_dth"
                                     />
 
                             </RelativeLayout>
@@ -125,6 +126,7 @@
                                 android:paddingBottom="@dimen/_5sdp">
 
                                 <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etplan"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentLeft="true"
@@ -132,9 +134,9 @@
                                     android:backgroundTint="@color/ripple"
                                     android:drawableLeft="@drawable/ic_smartphone"
                                     android:drawablePadding="10dp"
+                                    android:focusable="false"
                                     android:hint="@string/code"
-                                    android:inputType="text"
-                                    android:id="@+id/etcode"
+                                    android:inputType="textMultiLine"
                                     android:padding="@dimen/_10sdp"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                                     android:textColor="@color/black"
@@ -226,11 +228,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/card5"
+                            android:layout_marginStart="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:layout_marginEnd="@dimen/_30sdp"
+                            android:layout_marginBottom="@dimen/_30sdp"
                             android:background="@drawable/btn_gredient_style"
-                            android:textColor="@color/white"
                             android:text="@string/submit"
+                            android:id="@+id/btnpay"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:layout_margin="@dimen/_30sdp"/>
+                            android:textColor="@color/white" />
 
 
                     </RelativeLayout>

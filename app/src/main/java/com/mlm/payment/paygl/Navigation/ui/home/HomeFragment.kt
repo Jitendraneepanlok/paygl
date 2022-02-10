@@ -199,6 +199,7 @@ class HomeFragment : Fragment() {
 
     private fun getDashBoardData() {
 
+
         val pDialog = ProgressDialog(activity)
         pDialog.setMessage(activity?.getString(R.string.dialog_msg));
         pDialog.setCancelable(false);

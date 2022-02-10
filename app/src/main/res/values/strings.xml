@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PAYGL</string>
+    <string name="app_name">GLPAYS</string>
     <string name="dialog_msg">Please Wait...</string>
     <string name="step">Step</string>
     <string name="step_number">1/3</string>
@@ -122,7 +122,7 @@
     <string name="yourmsg">your message...</string>
     <string name="etmobile">Phone number *</string>
     <string name="welcome_intro">Need Better Plan to Start Your Business</string>
-    <string name="welcome_intro_2">PAYGL offers you a holistic approach towards business by bringing to its distributors health care products and great business opportunity through a simple and very powerful incentives &amp;commission.</string>
+    <string name="welcome_intro_2">Glpays focus on Delivering Reliable Value Added Services to Customers in an easiest possible manner which will simplify their utility transactions and requirements. Bringing various common services like Mobile Top-Up/DTH Recharge etc under one roof will significantly reduce the inventory of agents/dealers/retail outlets and also boost their business growth in several ways.</string>
     <string name="menu_aboutus">About Us</string>
     <string name="pancardfront">Pan Card</string>
     <string name="adharcardfront">Adhar/DL/Voter Id Front Update</string>
@@ -157,6 +157,8 @@
     <string name="tvpackage">Package :</string>
     <string name="menu_add_fund">Add Fund</string>
     <string name="ettransactionid">Enter Transaction Id</string>
+    <string name="sucess">Sucess !</string>
+    <string name="ok_thank">OK THANKS</string>
 
 
     <string-array name="dth_operator">

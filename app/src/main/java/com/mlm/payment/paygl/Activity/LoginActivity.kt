@@ -40,6 +40,7 @@ class LoginActivity : AppCompatActivity() {
         initView()
     }
 
+
     private fun initView() {
         val cb_remember: AppCompatCheckBox = findViewById(R.id.cb_remember)
         cb_remember.setOnCheckedChangeListener { buttonView, isChecked ->
