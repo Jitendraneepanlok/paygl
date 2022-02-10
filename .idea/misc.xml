@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/drawable-v24/btn_gredient_style.xml" value="0.2703125" />
+        <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/drawable-v24/edit_box_background.xml" value="0.228" />
+        <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/drawable-v24/edit_style.xml" value="0.228" />
+        <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/drawable-v24/edittext_gray_rounded_border.xml" value="0.228" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/drawable-v24/ic_back.xml" value="0.2703125" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/drawable-v24/indicator_selected.xml" value="0.2703125" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/drawable/edittext_commit.xml" value="0.2703125" />
