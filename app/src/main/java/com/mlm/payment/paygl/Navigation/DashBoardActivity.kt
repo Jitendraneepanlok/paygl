@@ -112,7 +112,7 @@ class DashBoardActivity : AppCompatActivity() {
 
     private fun callAboutUs() {
         val openURL = Intent(android.content.Intent.ACTION_VIEW)
-        openURL.data = Uri.parse("http://paygl.in/Welcome/aboutus")
+        openURL.data = Uri.parse("https://glpays.com/")
         startActivity(openURL)
     }
 
