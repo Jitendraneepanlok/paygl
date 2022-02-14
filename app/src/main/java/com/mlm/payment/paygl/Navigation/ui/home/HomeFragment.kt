@@ -13,38 +13,34 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.mlm.payment.paygl.Adapter.DashBoardAdapter
 import com.mlm.payment.paygl.Fragments.HomeSliderFragment
 import com.mlm.payment.paygl.Helper.IndicatorLayout
 import com.mlm.payment.paygl.Model.DashBoardModel
 import com.mlm.payment.paygl.Model.PayglXXXXXXXX
-import com.mlm.payment.paygl.R
-import com.pay.paygl.Adapter.IntroSliderAdapter
-import com.pay.paygl.Network.ApiClient
-import kotlinx.android.synthetic.main.activity_welcome_slider.*
-import retrofit2.Call
-import retrofit2.Response
-import java.util.*
-import androidx.navigation.NavController
-import androidx.navigation.Navigation.*
-import androidx.navigation.findNavController
 import com.mlm.payment.paygl.Pojo.DashBoardPageResponse
 import com.mlm.payment.paygl.Pojo.Service
 import com.mlm.payment.paygl.Pojo.UserDetailsResponse
+import com.mlm.payment.paygl.R
 import com.mlm.payment.paygl.databinding.FragmentHomeBinding
 import com.pay.paygl.Activity.LoginActivity
+import com.pay.paygl.Adapter.IntroSliderAdapter
 import com.pay.paygl.Helper.SessionManager
 import com.pay.paygl.Model.LogoutModel
 import com.pay.paygl.Model.PayglXX
 import com.pay.paygl.Model.PayglXXXX
 import com.pay.paygl.Model.UserDetailsModel
+import com.pay.paygl.Network.ApiClient
 import com.pay.paygl.Pojo.LogoutResponse
-import java.lang.StringBuilder
-import kotlin.collections.ArrayList
+import retrofit2.Call
+import retrofit2.Response
+import java.util.*
 
 
 class HomeFragment : Fragment() {
@@ -70,6 +66,7 @@ class HomeFragment : Fragment() {
     lateinit var user_id: String
     private lateinit var txtnews: AppCompatTextView
     private lateinit var animation: Animation
+    private lateinit var dashboardId :String
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -94,8 +91,7 @@ class HomeFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        navController =
-            requireActivity().findNavController(R.id.nav_host_fragment_content_dash_board)
+        navController = requireActivity().findNavController(R.id.nav_host_fragment_content_dash_board)
     }
 
     private fun initView() {
@@ -229,12 +225,18 @@ class HomeFragment : Fragment() {
                         }
                         adapter.setOnItemClickListner(object :
                             DashBoardAdapter.onItemClickedListner {
-                            override fun onItemclicked(position: Int) {
-                                Log.e("postion", "" + position)
+                            override fun onItemclicked(position: Int,service: Service) {
+
+                                dashboardId = service.txtid
+                                val bundle = Bundle()
+                                bundle.putString("DasgboardItemClicked_ID",dashboardId)
                                 when (position) {
-                                    0 -> navController.navigate(R.id.action_HomeFragment_to_kycFragment)
-                                    1 -> navController.navigate(R.id.action_HomeFragment_to_prepaidFragment)
-                                    2 -> navController.navigate(R.id.action_HomeFragment_to_dthFragment)
+
+
+
+                                    0 -> navController.navigate(R.id.action_HomeFragment_to_kycFragment,bundle)
+                                    1 -> navController.navigate(R.id.action_HomeFragment_to_prepaidFragment,bundle)
+                                    2 -> navController.navigate(R.id.action_HomeFragment_to_dthFragment,bundle)
                                     7 -> navController.navigate(R.id.action_HomeFragment_to_moneyTransferFragment)
                                     12 -> navController.navigate(R.id.action_HomeFragment_to_addFundFragment)
                                     14 -> navController.navigate(R.id.action_HomeFragment_to_galleryFragment)

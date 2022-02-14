@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home">
 
         <argument
-            android:name="txt_ID"
+            android:name="DasgboardItemClicked_ID"
             app:argType="string" />
 
         <action android:id="@+id/action_HomeFragment_to_kycFragment"

@@ -51,9 +51,10 @@ class DthFragment : Fragment() {
         sessionManager = SessionManager(activity)
         // this id for when login than getting into login response api
         user_id = sessionManager.getUserData(SessionManager.User_Id).toString()
+
         // Here get product ID from Home page Selected product item from list
-        dashboardid = sessionManager.getUserData(SessionManager.txtid).toString()
-        Log.e("as", "" + dashboardid)
+        dashboardid = getArguments()?.getString("DasgboardItemClicked_ID").toString()
+        Log.e("DasgboardItemClicked_ID",""+dashboardid)
         root = binding.root
 
         /* homeViewModel.text.observe(viewLifecycleOwner, Observer {
@@ -189,22 +190,16 @@ class DthFragment : Fragment() {
 
 
         val apiInterface = ApiClient.getClient.getRecharge(
-            AppRechargeModel(
-                PayglXXXXXXXXXXX(
-            etamount.text.toString(),
-            dashboardid,etnumber.text.toString(),
-            selectedoperator,
-            user_id)
-            )
-        )
+            AppRechargeModel(PayglXXXXXXXXXXX(etamount.text.toString(), dashboardid,etnumber.text.toString(), selectedoperator, user_id)))
 
         apiInterface.enqueue(object : retrofit2.Callback<AppRechargePojo> {
             override fun onResponse(call: Call<AppRechargePojo>, response: Response<AppRechargePojo>) {
                 if (response.isSuccessful) {
                     Log.e("RechargeResponse", "" + response.body()?.Paygl?.response)
 
-                    callStatusDialog(response.body()?.Paygl?.recharge_status)
-
+                    if (response.body()?.Paygl?.recharge_status!=null) {
+                        callStatusDialog(response.body()?.Paygl?.recharge_status)
+                    }
                     pDialog.dismiss()
 
                 } else {

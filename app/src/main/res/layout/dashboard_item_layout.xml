@@ -10,12 +10,14 @@
         android:layout_margin="@dimen/_5sdp"
         android:elevation="@dimen/_15sdp"
         android:id="@+id/card_itemClicked"
+        android:clickable="true"
         app:cardCornerRadius="@dimen/_10sdp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/_10sdp"
+            android:clickable="false"
             android:paddingBottom="@dimen/_10sdp">
 
             <ImageView
@@ -24,6 +26,7 @@
                 android:layout_height="@dimen/_40sdp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitCenter"
+                android:clickable="false"
                 android:src="@drawable/ic_home" />
 
             <TextView
@@ -34,6 +37,7 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
                 android:text="@string/app_name"
+                android:clickable="false"
                 android:singleLine="true"
                 android:maxLines="1"
                 android:textStyle="bold"

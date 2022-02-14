@@ -51,8 +51,8 @@ class PrepaidFragment : Fragment() {
         user_id = sessionManager.getUserData(SessionManager.User_Id).toString()
 
         // Here get product ID from Home page Selected product item from list
-        dashboardid = sessionManager.getUserData(SessionManager.txtid).toString()
-        Log.e("as",""+dashboardid)
+        dashboardid = getArguments()?.getString("DasgboardItemClicked_ID").toString()
+        Log.e("DasgboardItemClicked_ID",""+dashboardid)
         val root: View = binding.root
         /* homeViewModel.text.observe(viewLifecycleOwner, Observer {
              textView.text = it

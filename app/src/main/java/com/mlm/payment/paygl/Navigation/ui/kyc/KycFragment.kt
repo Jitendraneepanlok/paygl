@@ -16,6 +16,8 @@ class KycFragment : Fragment() {
     private val binding get() = _binding!!
     lateinit var sessionManager: SessionManager
     lateinit var user_id: String
+    private lateinit var dashboardid: String
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         kycModel = ViewModelProvider(this).get(KycModel::class.java)
@@ -25,6 +27,11 @@ class KycFragment : Fragment() {
 
         user_id = sessionManager.getUserData(SessionManager.User_Id).toString()
         Log.e("Value", "" + user_id)
+
+        // Here get product ID from Home page Selected product item from list
+        dashboardid = getArguments()?.getString("DasgboardItemClicked_ID").toString()
+        Log.e("DasgboardItemClicked_ID",""+dashboardid)
+
         /*contactUsModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })*/
