@@ -159,6 +159,7 @@
     <string name="ettransactionid">Enter Transaction Id</string>
     <string name="sucess">Sucess !</string>
     <string name="ok_thank">OK THANKS</string>
+    <string name="offers">Offers</string>
 
 
     <string-array name="dth_operator">

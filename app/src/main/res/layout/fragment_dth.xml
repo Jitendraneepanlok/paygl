@@ -9,7 +9,6 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical">
 
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -17,7 +16,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -32,126 +30,7 @@
                         android:layout_height="wrap_content">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/card1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            app:cardBackgroundColor="@color/ripple">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/_5sdp"
-                                android:paddingBottom="@dimen/_5sdp">
-
-                                <androidx.appcompat.widget.AppCompatEditText
-                                    android:id="@+id/etwalletbalance"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentLeft="true"
-                                    android:background="@color/ripple"
-                                    android:backgroundTint="@color/ripple"
-                                    android:clickable="false"
-                                    android:drawableLeft="@drawable/ic_rupee"
-                                    android:drawablePadding="10dp"
-                                    android:editable="false"
-                                    android:enabled="false"
-                                    android:focusable="false"
-                                    android:focusableInTouchMode="false"
-                                    android:hint="@string/wallet_price"
-                                    android:padding="@dimen/_10sdp"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                                    android:textColor="@color/black"
-                                    android:textColorHint="@color/black"
-                                    android:textStyle="bold" />
-
-
-                            </RelativeLayout>
-
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/card2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/card1"
-                            android:layout_margin="@dimen/_10sdp"
-                            app:cardBackgroundColor="@color/ripple">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/_5sdp"
-                                android:paddingBottom="@dimen/_5sdp">
-
-                                <androidx.appcompat.widget.AppCompatImageView
-                                    android:id="@+id/img_dth"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="15dp"
-                                    android:layout_marginTop="@dimen/_7sdp"
-                                    android:layout_marginBottom="@dimen/_5sdp"
-                                    android:src="@drawable/ic_dish" />
-
-                                <androidx.appcompat.widget.AppCompatSpinner
-                                    android:id="@+id/spinopratore"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/_5sdp"
-                                    android:layout_marginLeft="@dimen/_5sdp"
-                                    android:layout_toRightOf="@+id/img_dth"
-                                    />
-
-                            </RelativeLayout>
-
-
-                        </androidx.cardview.widget.CardView>
-
-
-
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/card3"
-                            android:layout_below="@+id/card2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            app:cardBackgroundColor="@color/ripple">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/_5sdp"
-                                android:paddingBottom="@dimen/_5sdp">
-
-                                <androidx.appcompat.widget.AppCompatEditText
-                                    android:id="@+id/etplan"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentLeft="true"
-                                    android:background="@color/ripple"
-                                    android:backgroundTint="@color/ripple"
-                                    android:drawableLeft="@drawable/ic_smartphone"
-                                    android:drawablePadding="10dp"
-                                    android:focusable="false"
-                                    android:hint="@string/code"
-                                    android:inputType="textMultiLine"
-                                    android:padding="@dimen/_10sdp"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                                    android:textColor="@color/black"
-                                    android:textColorHint="@color/black" />
-
-
-                            </RelativeLayout>
-
-
-                        </androidx.cardview.widget.CardView>
-
-
-                        <androidx.cardview.widget.CardView
                             android:id="@+id/card4"
-                            android:layout_below="@+id/card3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/_10sdp"
@@ -185,11 +64,99 @@
 
                         </androidx.cardview.widget.CardView>
 
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:layout_below="@+id/card4"
+                            app:cardBackgroundColor="@color/ripple">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/_5sdp"
+                                android:paddingBottom="@dimen/_5sdp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/img_dth"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginTop="@dimen/_7sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:src="@drawable/ic_smartphone" />
+
+                                <androidx.appcompat.widget.AppCompatSpinner
+                                    android:id="@+id/spinopratore"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:layout_toRightOf="@+id/img_dth"
+                                    />
+                            </RelativeLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card3"
+                            android:layout_below="@+id/card2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            app:cardBackgroundColor="@color/ripple">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/_5sdp"
+                                android:paddingBottom="@dimen/_5sdp">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_15sdp"
+                                    android:text="@string/offers"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                    android:textStyle="bold"
+                                    android:paddingTop="@dimen/_5sdp"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/etplan"
+                                    android:layout_below="@+id/tv1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:background="@color/ripple"
+                                    android:backgroundTint="@color/ripple"
+                                    android:drawableLeft="@drawable/ic_smartphone"
+                                    android:drawablePadding="10dp"
+                                    android:hint="@string/code"
+                                    android:inputType="textImeMultiLine"
+                                    android:padding="@dimen/_10sdp"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/black" />
+
+
+                            </RelativeLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+
 
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/card5"
-                            android:layout_below="@+id/card4"
+                            android:layout_below="@+id/card3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/_10sdp"
@@ -208,7 +175,7 @@
                                     android:layout_alignParentLeft="true"
                                     android:background="@color/ripple"
                                     android:backgroundTint="@color/ripple"
-                                    android:drawableLeft="@drawable/ic_rupee"
+                                    android:drawableLeft="@drawable/ic_smartphone"
                                     android:drawablePadding="10dp"
                                     android:hint="@string/enter_ammount"
                                     android:inputType="number"
@@ -225,6 +192,7 @@
 
 
                         <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnpay"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/card5"
@@ -234,7 +202,6 @@
                             android:layout_marginBottom="@dimen/_30sdp"
                             android:background="@drawable/btn_gredient_style"
                             android:text="@string/submit"
-                            android:id="@+id/btnpay"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textColor="@color/white" />
 

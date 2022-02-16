@@ -68,11 +68,7 @@ class HomeFragment : Fragment() {
     private lateinit var animation: Animation
     private lateinit var dashboardId :String
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         sessionManager = SessionManager(activity)
@@ -231,9 +227,6 @@ class HomeFragment : Fragment() {
                                 val bundle = Bundle()
                                 bundle.putString("DasgboardItemClicked_ID",dashboardId)
                                 when (position) {
-
-
-
                                     0 -> navController.navigate(R.id.action_HomeFragment_to_kycFragment,bundle)
                                     1 -> navController.navigate(R.id.action_HomeFragment_to_prepaidFragment,bundle)
                                     2 -> navController.navigate(R.id.action_HomeFragment_to_dthFragment,bundle)

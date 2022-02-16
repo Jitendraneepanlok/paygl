@@ -40,7 +40,7 @@ class DthFragment : Fragment() {
     private lateinit var selectedoperator: String
     private  var operatorlist: ArrayList<Operator>? =null
     private var planname: ArrayList<ViewPlan>? = null
-    private lateinit var etplan: AppCompatEditText
+    private lateinit var etplan: AppCompatTextView
     private lateinit var btnpay: AppCompatButton
     private lateinit var etamount :AppCompatEditText
     private lateinit var etnumber: AppCompatEditText
