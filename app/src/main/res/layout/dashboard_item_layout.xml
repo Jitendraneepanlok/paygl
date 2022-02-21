@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_5sdp"
-        android:elevation="@dimen/_15sdp"
+        android:elevation="@dimen/_10sdp"
         android:id="@+id/card_itemClicked"
         android:clickable="true"
         app:cardCornerRadius="@dimen/_10sdp">
@@ -26,7 +26,7 @@
                 android:layout_height="@dimen/_60sdp"
                 android:layout_centerHorizontal="true"
                 android:clickable="false"
-                android:scaleType="fitCenter"
+                android:scaleType="fitXY"
                 android:src="@drawable/ic_home" />
 
             <TextView
@@ -34,7 +34,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dashboardicon"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
                 android:text="@string/app_name"
                 android:clickable="false"

@@ -61,10 +61,11 @@ class DashBoardAdapter(var context: Context) : RecyclerView.Adapter<DashBoardAda
         if (data.txtname != null) {
             holder.dashboardtextname.text = data.txtname
         }
+        val img = data.txtimg
         if (data.txtimg != null) {
             context?.let {
                 Glide.with(it)
-                    .load(data.txtimg)
+                    .load(img/*data.txtimg*/)
                     .error(R.drawable.app_logo)
                     .placeholder(R.drawable.app_logo)
                     .into(holder.dashboardicon)
