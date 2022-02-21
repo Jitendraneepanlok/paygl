@@ -22,11 +22,11 @@
 
             <ImageView
                 android:id="@+id/dashboardicon"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
                 android:layout_centerHorizontal="true"
-                android:scaleType="fitCenter"
                 android:clickable="false"
+                android:scaleType="fitCenter"
                 android:src="@drawable/ic_home" />
 
             <TextView

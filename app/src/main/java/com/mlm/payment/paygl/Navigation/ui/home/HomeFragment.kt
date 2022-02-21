@@ -112,13 +112,14 @@ class HomeFragment : Fragment() {
                 if (response.isSuccessful) {
                     Log.e("Response", "" + response.body()?.Paygl?.response)
                     var arraylist = ArrayList(response.body()?.Paygl?.News)
+                    var asdds=StringBuffer()
                     for (i in arraylist) {
-                        val stringBuilder = StringBuilder()
-                        stringBuilder.append(arraylist+ "");
-                        txtnews.setText(stringBuilder.append("").toString()+i.txtnews)
-                        animation = AnimationUtils.loadAnimation(activity, R.anim.textanimation)
-                        txtnews.startAnimation(animation)
+
+                       asdds.append(i.txtnews)
                     }
+                    txtnews.setText(asdds)
+                    animation = AnimationUtils.loadAnimation(activity, R.anim.textanimation)
+                    txtnews.startAnimation(animation)
                     pDialog.dismiss()
                 } else {
                     Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()

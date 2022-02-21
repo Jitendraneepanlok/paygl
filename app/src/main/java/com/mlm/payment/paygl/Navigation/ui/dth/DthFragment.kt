@@ -14,6 +14,7 @@ import androidx.appcompat.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
+import com.mlm.payment.paygl.Adapter.OperatorPlanAdapter
 import com.mlm.payment.paygl.Adapter.PlanAdapter
 import com.mlm.payment.paygl.Model.*
 import com.mlm.payment.paygl.Model.PayglXXXXXXXXX
@@ -40,7 +41,7 @@ class DthFragment : Fragment() {
     private lateinit var selectedoperator: String
     private  var operatorlist: ArrayList<Operator>? =null
     private var planname: ArrayList<ViewPlan>? = null
-    private lateinit var etplan: AppCompatTextView
+    private lateinit var spinplan: AppCompatSpinner
     private lateinit var btnpay: AppCompatButton
     private lateinit var etamount :AppCompatEditText
     private lateinit var etnumber: AppCompatEditText
@@ -124,7 +125,7 @@ class DthFragment : Fragment() {
 
             }
             etamount = binding.etamount
-            etplan = binding.etplan
+            spinplan = binding.spinplan
             etnumber = binding.etnumber
             btnpay = binding.btnpay
             btnpay.setOnClickListener {
@@ -146,14 +147,24 @@ class DthFragment : Fragment() {
                     Log.e("Response", "" + response.body()?.Paygl?.response)
                     Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
                     planname = ArrayList()
+
+                    if (planname != null) {
+                        response.body()?.Paygl?.let { planname!!.addAll(it?.ViewPlan) }
+                        val adapter = OperatorPlanAdapter(activity, planname!!)
+
+                        spinplan.adapter = adapter
+
+                        adapter?.notifyDataSetChanged()
+
+
+                    }
+                   /* planname = ArrayList()
                     if (planname!=null){
                         response.body()?.Paygl?.let { planname!!.addAll(it?.ViewPlan) }
                         for (i in 0 until planname!!.size) {
                             etplan.setText(response.body()?.Paygl?.ViewPlan?.get(i)?.txtplanamt +"\n"+ response.body()?.Paygl?.ViewPlan?.get(i)?.txtplandesc)
-                        }
+                        }*/
                         pDialog.dismiss()
-                    }
-
 
                 } else {
                     Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)

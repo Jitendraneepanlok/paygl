@@ -6,13 +6,12 @@ import android.graphics.Path
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.AdapterView
-import android.widget.RelativeLayout
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
+import com.mlm.payment.paygl.Adapter.OperatorPlanAdapter
 import com.mlm.payment.paygl.Adapter.PlanAdapter
 import com.mlm.payment.paygl.Model.*
 import com.mlm.payment.paygl.Model.PayglXXXXXXXXX
@@ -25,6 +24,7 @@ import com.pay.paygl.Helper.SessionManager
 import com.pay.paygl.Network.ApiClient
 import retrofit2.Call
 import retrofit2.Response
+import java.lang.StringBuilder
 
 class PrepaidFragment : Fragment() {
     private lateinit var prepaidModel: PrepaidModel
@@ -34,16 +34,21 @@ class PrepaidFragment : Fragment() {
     private lateinit var sessionManager: SessionManager
     private lateinit var user_id: String
     private lateinit var spinopratore: AppCompatSpinner
-    private  var operatorlist: ArrayList<Operator>? =null
+    private var operatorlist: ArrayList<Operator>? = null
     private var planname: ArrayList<ViewPlan>? = null
     private lateinit var dashboardid: String
     private lateinit var selectedoperator: String
     private lateinit var etplan: AppCompatTextView
     private lateinit var btnpay: AppCompatButton
-    private lateinit var etamount :AppCompatEditText
+    private lateinit var etamount: AppCompatEditText
     private lateinit var etnumber: AppCompatEditText
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    private lateinit var strinbuilder: StringBuilder
+    private lateinit var spinplan: AppCompatSpinner
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         prepaidModel = ViewModelProvider(this).get(PrepaidModel::class.java)
         _binding = FragmentPrepaidRechargeBinding.inflate(inflater, container, false)
         sessionManager = SessionManager(activity)
@@ -52,7 +57,7 @@ class PrepaidFragment : Fragment() {
 
         // Here get product ID from Home page Selected product item from list
         dashboardid = getArguments()?.getString("DasgboardItemClicked_ID").toString()
-        Log.e("DasgboardItemClicked_ID",""+dashboardid)
+        Log.e("DasgboardItemClicked_ID", "" + dashboardid)
         val root: View = binding.root
         /* homeViewModel.text.observe(viewLifecycleOwner, Observer {
              textView.text = it
@@ -68,13 +73,17 @@ class PrepaidFragment : Fragment() {
         pDialog.setCancelable(false);
         pDialog.show();
 
-        val apiInterface = ApiClient.getClient.getOperatorData(OperatorModel(PayglXXXXXXXXX(dashboardid/*"2"*/)))
+        val apiInterface =
+            ApiClient.getClient.getOperatorData(OperatorModel(PayglXXXXXXXXX(dashboardid/*"2"*/)))
         apiInterface.enqueue(object : retrofit2.Callback<OperatorResponse> {
-            override fun onResponse(call: Call<OperatorResponse>, response: Response<OperatorResponse>) {
+            override fun onResponse(
+                call: Call<OperatorResponse>,
+                response: Response<OperatorResponse>
+            ) {
                 if (response.isSuccessful) {
                     Log.e("Response", "" + response.body()?.Paygl?.response)
                     operatorlist = ArrayList()
-                    if (operatorlist!=null){
+                    if (operatorlist != null) {
                         response.body()?.Paygl?.let { operatorlist!!.addAll(it?.operator) }
                         val customDropDownAdapter = PlanAdapter(activity, operatorlist!!)
                         spinopratore.adapter = customDropDownAdapter
@@ -84,7 +93,8 @@ class PrepaidFragment : Fragment() {
                     pDialog.dismiss()
 
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                        .show()
                     pDialog.dismiss()
                 }
             }
@@ -99,7 +109,9 @@ class PrepaidFragment : Fragment() {
 
     private fun initView() {
         etamount = binding.etamount
-        etplan = binding.etplan
+//        etplan = binding.etplan
+        spinplan = binding.spinplan
+
         spinopratore = binding.spinopratore
         if (spinopratore != null) {
             spinopratore.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -111,7 +123,7 @@ class PrepaidFragment : Fragment() {
                 ) {
                     var rrr: Operator = spinopratore.selectedItem as Operator
                     selectedoperator = rrr.txtopid
-                    CallPlanApi(selectedoperator)
+                    CallPlanApi(selectedoperator.toString())
 
                 }
 
@@ -131,7 +143,6 @@ class PrepaidFragment : Fragment() {
     }
 
 
-
     private fun CallPlanApi(selectedoperator: String) {
         Log.e("planId", "" + selectedoperator)
         val pDialog = ProgressDialog(activity)
@@ -145,11 +156,30 @@ class PrepaidFragment : Fragment() {
                 if (response.isSuccessful) {
                     Log.e("Response", "" + response.body()?.Paygl?.response)
                     planname = ArrayList()
-                    response.body()?.Paygl?.let { planname!!.addAll(it?.ViewPlan) }
 
-                    for (i in 0 until planname!!.size) {
-                        etplan.setText(response.body()?.Paygl?.ViewPlan?.get(i)?.txtplanamt +"\n"+ response.body()?.Paygl?.ViewPlan?.get(i)?.txtplandesc)
+                    if (planname != null) {
+                        response.body()?.Paygl?.let { planname!!.addAll(it?.ViewPlan) }
+                         val adapter = OperatorPlanAdapter(activity, planname!!)
+
+                        spinplan.adapter = adapter
+
+                        adapter?.notifyDataSetChanged()
+
+
                     }
+
+                    /*strinbuilder = StringBuilder()
+                    for (i in planname!!.indices) {
+                        val aa: String =
+                            response.body()?.Paygl?.ViewPlan?.get(i)?.txtplanamt.toString() + "" + response.body()?.Paygl?.ViewPlan?.get(
+                                i
+                            )?.txtplandesc.toString()
+                        Log.e("aa", "" + aa);
+                        strinbuilder.append(aa)
+
+                    }
+                    etplan.setText(strinbuilder)*/
+
                     pDialog.dismiss()
 
                 } else {
@@ -168,13 +198,13 @@ class PrepaidFragment : Fragment() {
     }
 
     private fun checkValidation() {
-        if (etnumber.text?.trim()?.isEmpty()!!){
+        if (etnumber.text?.trim()?.isEmpty()!!) {
             etnumber.requestFocus()
             etnumber.setError("Please Enter Mobile no.")
-        }else if (etamount.text?.trim()?.isEmpty()!!){
+        } else if (etamount.text?.trim()?.isEmpty()!!) {
             etamount.requestFocus()
             etamount.setError("Please Enter Recharge Ammount")
-        }else{
+        } else {
             CallRechargeApi()
         }
     }
@@ -186,14 +216,22 @@ class PrepaidFragment : Fragment() {
         pDialog.show();
 
 
-        val apiInterface = ApiClient.getClient.getRecharge(AppRechargeModel(PayglXXXXXXXXXXX(
-            etamount.text.toString(),
-            dashboardid,etnumber.text.toString(),
-            selectedoperator,
-            user_id)))
+        val apiInterface = ApiClient.getClient.getRecharge(
+            AppRechargeModel(
+                PayglXXXXXXXXXXX(
+                    etamount.text.toString(),
+                    dashboardid, etnumber.text.toString(),
+                    selectedoperator,
+                    user_id
+                )
+            )
+        )
 
         apiInterface.enqueue(object : retrofit2.Callback<AppRechargePojo> {
-            override fun onResponse(call: Call<AppRechargePojo>, response: Response<AppRechargePojo>) {
+            override fun onResponse(
+                call: Call<AppRechargePojo>,
+                response: Response<AppRechargePojo>
+            ) {
                 if (response.isSuccessful) {
                     Log.e("RechargeResponse", "" + response.body()?.Paygl?.response)
 
@@ -202,7 +240,8 @@ class PrepaidFragment : Fragment() {
                     pDialog.dismiss()
 
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                        .show()
                     pDialog.dismiss()
                 }
             }
@@ -221,11 +260,11 @@ class PrepaidFragment : Fragment() {
         dialog?.setContentView(R.layout.status_layout)
         dialog?.setCancelable(true)
 
-        var txt_recharge_staus : AppCompatTextView
-        var txt_thanks :AppCompatTextView
-        var txt_sucess :AppCompatTextView
-        var rl1 :RelativeLayout
-        var img_status :AppCompatImageView
+        var txt_recharge_staus: AppCompatTextView
+        var txt_thanks: AppCompatTextView
+        var txt_sucess: AppCompatTextView
+        var rl1: RelativeLayout
+        var img_status: AppCompatImageView
 
         txt_recharge_staus = dialog!!.findViewById(R.id.txt_recharge_staus)
         txt_thanks = dialog!!.findViewById(R.id.txt_thanks)
@@ -233,19 +272,19 @@ class PrepaidFragment : Fragment() {
         rl1 = dialog!!.findViewById(R.id.rl1)
         img_status = dialog!!.findViewById(R.id.img_status)
 
-        if (rechargeStatus.equals("Success")){
-            txt_sucess.setText(rechargeStatus+"!")
+        if (rechargeStatus.equals("Success")) {
+            txt_sucess.setText(rechargeStatus + "!")
             txt_sucess.setTextColor(resources.getColor(R.color.white))
-            txt_recharge_staus.setText("Your Recharge is "+rechargeStatus)
+            txt_recharge_staus.setText("Your Recharge is " + rechargeStatus)
             txt_thanks.setText("OK THANKS")
             txt_thanks.setTextColor(resources.getColor(R.color.green))
             img_status.setImageDrawable(resources.getDrawable(R.drawable.ic_sucess))
             rl1.setBackgroundColor(resources.getColor(R.color.green))
 
-        }else if (rechargeStatus.equals("Failed")){
-            txt_sucess.setText(rechargeStatus+"!")
+        } else if (rechargeStatus.equals("Failed")) {
+            txt_sucess.setText(rechargeStatus + "!")
             txt_sucess.setTextColor(resources.getColor(R.color.white))
-            txt_recharge_staus.setText("Your Recharge is "+rechargeStatus)
+            txt_recharge_staus.setText("Your Recharge is " + rechargeStatus)
             txt_thanks.setText("Retry")
             txt_thanks.setTextColor(resources.getColor(R.color.red))
             img_status.setImageDrawable(resources.getDrawable(R.drawable.ic_faield))
@@ -262,7 +301,6 @@ class PrepaidFragment : Fragment() {
             WindowManager.LayoutParams.WRAP_CONTENT
         )
         dialog.show()
-
 
 
     }

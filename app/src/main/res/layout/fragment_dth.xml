@@ -91,16 +91,13 @@
                                     android:id="@+id/spinopratore"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/_5sdp"
                                     android:layout_marginLeft="@dimen/_5sdp"
-                                    android:layout_toRightOf="@+id/img_dth"
-                                    />
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_toRightOf="@+id/img_dth" />
                             </RelativeLayout>
 
 
                         </androidx.cardview.widget.CardView>
-
-
 
 
                         <androidx.cardview.widget.CardView
@@ -111,25 +108,39 @@
                             android:layout_margin="@dimen/_10sdp"
                             app:cardBackgroundColor="@color/ripple">
 
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:paddingTop="@dimen/_5sdp"
+                                android:text="@string/offers"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"/>
+
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:paddingTop="@dimen/_5sdp"
-                                android:paddingBottom="@dimen/_5sdp">
+                                android:layout_marginTop="@dimen/_25sdp">
 
-                                <androidx.appcompat.widget.AppCompatTextView
-                                    android:id="@+id/tv1"
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_smartphone"
+                                    android:id="@+id/img"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"/>
+
+                                <androidx.appcompat.widget.AppCompatSpinner
+                                    android:id="@+id/spinplan"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="@dimen/_15sdp"
-                                    android:text="@string/offers"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                                    android:textStyle="bold"
-                                    android:paddingTop="@dimen/_5sdp"/>
-
-                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_toRightOf="@+id/img" />
+                                <!--<androidx.appcompat.widget.AppCompatTextView
                                     android:id="@+id/etplan"
-                                    android:layout_below="@+id/tv1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentLeft="true"
@@ -138,12 +149,12 @@
                                     android:drawableLeft="@drawable/ic_smartphone"
                                     android:drawablePadding="10dp"
                                     android:hint="@string/code"
-                                    android:inputType="textImeMultiLine"
+                                    android:inputType="textMultiLine"
                                     android:padding="@dimen/_10sdp"
+                                    android:scrollbars="vertical|horizontal"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                                     android:textColor="@color/black"
-                                    android:textColorHint="@color/black" />
-
+                                    android:textColorHint="@color/black" />-->
 
                             </RelativeLayout>
 

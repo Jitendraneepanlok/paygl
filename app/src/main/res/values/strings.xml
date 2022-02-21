@@ -80,7 +80,7 @@
     <string name="confirm_pass">Confirm Password</string>
     <string name="confirm_exit">Confirm Exit ..!!</string>
     <string name="rewards">Rewards</string>
-
+    <string name="Rs">\u20B9</string>
     <string-array name="Gender">
         <item>Select</item>
         <item>Male</item>
