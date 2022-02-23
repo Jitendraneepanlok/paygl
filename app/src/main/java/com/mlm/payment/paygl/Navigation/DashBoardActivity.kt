@@ -7,20 +7,24 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.*
+import android.view.Gravity
+import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import android.widget.TextView
 import android.widget.Toast
-import com.google.android.material.navigation.NavigationView
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.findNavController
+import androidx.navigation.ui.*
 import com.bumptech.glide.Glide
+import com.google.android.material.navigation.NavigationView
+import com.mlm.payment.paygl.Pojo.UserDetailsResponse
 import com.mlm.payment.paygl.R
 import com.mlm.payment.paygl.databinding.ActivityDashBoardBinding
 import com.pay.paygl.Activity.LoginActivity
@@ -32,13 +36,10 @@ import com.pay.paygl.Model.UserDetailsModel
 import com.pay.paygl.Network.ApiClient
 import com.pay.paygl.Pojo.LogoutResponse
 import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.android.synthetic.main.app_bar_dash_board.view.*
 import kotlinx.android.synthetic.main.nav_header_dash_board.view.*
 import retrofit2.Call
 import retrofit2.Response
-import androidx.core.view.GravityCompat
-
-import androidx.navigation.ui.NavigationUI
-import com.mlm.payment.paygl.Pojo.UserDetailsResponse
 
 
 class DashBoardActivity : AppCompatActivity() {
@@ -51,7 +52,9 @@ class DashBoardActivity : AppCompatActivity() {
     lateinit var tvprofilename: TextView
     lateinit var tvprofileEmail: TextView
     lateinit var imageView: CircleImageView
-
+    private lateinit var imgwalletbalance :AppCompatImageView
+   lateinit var toolbar : androidx.appcompat.widget.Toolbar
+   private lateinit var walletavailableamount :String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -64,6 +67,13 @@ class DashBoardActivity : AppCompatActivity() {
         binding = ActivityDashBoardBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.appBarDashBoard.toolbar)
+
+         toolbar = binding.root.toolbar
+        imgwalletbalance = toolbar.imgwalletbalance
+        imgwalletbalance.setOnClickListener(){
+            OpenWalletDialog()
+        }
+
         sessionManager = SessionManager(applicationContext)
         if (sessionManager.getUserData(SessionManager.User_Id)!=null) {
             user_id = sessionManager.getUserData(SessionManager.User_Id).toString()
@@ -108,6 +118,29 @@ class DashBoardActivity : AppCompatActivity() {
             true
         })
 
+    }
+
+    private fun OpenWalletDialog() {
+        val dialog = this?.let { Dialog(it, R.style.DialogTheme) }
+        dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog?.setContentView(R.layout.wallet_layout)
+        dialog?.setCancelable(true)
+
+
+        val txt_cancel: AppCompatTextView = dialog!!.findViewById(R.id.txt_cancel)
+        txt_cancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        val tv_available_balance: AppCompatTextView = dialog!!.findViewById(R.id.tv_available_balance)
+        tv_available_balance.setText(this.getString(R.string.Rs)+" "+walletavailableamount)
+
+        dialog?.window!!.setGravity(Gravity.TOP)
+        dialog?.window!!.setLayout(
+            WindowManager.LayoutParams.MATCH_PARENT,
+            WindowManager.LayoutParams.WRAP_CONTENT
+        )
+        dialog.show()
     }
 
     private fun callAboutUs() {
@@ -196,26 +229,26 @@ class DashBoardActivity : AppCompatActivity() {
         pDialog.setCancelable(false);
         pDialog.show();
 
-        val apiInterface =
-            ApiClient.getClient.getUserDetails(UserDetailsModel(PayglXXXX(user_id/*"1"*/)))
+        val apiInterface = ApiClient.getClient.getUserDetails(UserDetailsModel(PayglXXXX(user_id/*"1"*/)))
 
         apiInterface.enqueue(object : retrofit2.Callback<UserDetailsResponse> {
 
-            override fun onResponse(
-                call: Call<UserDetailsResponse>,
-                response: Response<UserDetailsResponse>
-            ) {
+            override fun onResponse(call: Call<UserDetailsResponse>, response: Response<UserDetailsResponse>) {
 
                 if (response.isSuccessful) {
                     Log.e("Response", "" + response.body()?.Paygl?.response)
-//                    Toast.makeText(applicationContext, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
-
                     if (response.body()?.Paygl?.txtname != null) {
                         tvprofilename.setText(response.body()?.Paygl?.txtname)
 
                     }
                     if (response.body()?.Paygl?.txtemail != null) {
                         tvprofileEmail.setText(response.body()?.Paygl?.txtemail)
+                    }
+
+                    if (response.body()?.Paygl?.txttotalamt != null) {
+                        Log.e("txttotalamt", "" +response.body()?.Paygl?.txttotalamt)
+                        walletavailableamount = response.body()?.Paygl?.txttotalamt.toString()
+
                     }
 
                     val media = response.body()?.Paygl?.txtphoto

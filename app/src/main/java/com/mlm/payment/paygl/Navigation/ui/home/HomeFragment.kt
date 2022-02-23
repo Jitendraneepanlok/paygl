@@ -49,8 +49,8 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private lateinit var homerecycler: RecyclerView
     private lateinit var adapter: DashBoardAdapter
-    private lateinit var vpIntroSlider: ViewPager2
-    private lateinit var indicatorLayout: IndicatorLayout
+    /*private lateinit var vpIntroSlider: ViewPager2
+    private lateinit var indicatorLayout: IndicatorLayout*/
     private var dataList = mutableListOf<Service>()
     private val fragmentList = ArrayList<Fragment>()
     var currentPage = 0
@@ -80,7 +80,7 @@ class HomeFragment : Fragment() {
          })*/
         initView()
         getDashBoardData()
-        AutoViewPager()
+       // AutoViewPager()
         getUserDetails()
         return root
     }
@@ -135,6 +135,7 @@ class HomeFragment : Fragment() {
         })
     }
 
+/*
     private fun AutoViewPager() {
         indicatorLayout = binding.indicatorLayout
         vpIntroSlider = binding.vpIntroSlider
@@ -157,7 +158,9 @@ class HomeFragment : Fragment() {
         }
         indicatorLayout.selectCurrentPosition(0)
         
-        /*After setting the adapter use the timer */
+        */
+/*After setting the adapter use the timer *//*
+
         val handler = Handler()
         val Update = Runnable {
             val NUM_PAGES = 0;
@@ -177,6 +180,7 @@ class HomeFragment : Fragment() {
         registerListeners()
     }
 
+
     private fun registerListeners() {
         vpIntroSlider.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
@@ -188,10 +192,9 @@ class HomeFragment : Fragment() {
                 }
             }
         })
-    }
+    } */
 
     private fun getDashBoardData() {
-
 
         val pDialog = ProgressDialog(activity)
         pDialog.setMessage(activity?.getString(R.string.dialog_msg));

@@ -32,7 +32,7 @@
     <string name="email">test@gmail.com</string>
     <string name="statement">Statement</string>
     <string name="add_balance">Add Balance</string>
-    <string name="txt_available_balance">Available Balance $ 0.0</string>
+    <string name="txt_available_balance">Available Balance </string>
     <string name="ammount">Enter Amount</string>
     <string name="add_wallet">Add Wallet Balance</string>
     <string name="balance">Balance</string>
@@ -160,6 +160,10 @@
     <string name="sucess">Sucess !</string>
     <string name="ok_thank">OK THANKS</string>
     <string name="offers">Offers</string>
+    <string name="commission">Commission</string>
+    <string name="txt_opening_balance">Opening Balance </string>
+    <string name="total_commission">Total Amount</string>
+    <string name="txt_fund_balance">Credit Fund</string>
 
 
     <string-array name="dth_operator">

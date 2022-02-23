@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Navigation.ui.home.HomeFragment">
 
-    <androidx.viewpager2.widget.ViewPager2
+    <!--<androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vpIntroSlider"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_140sdp"/>
@@ -18,40 +18,35 @@
         android:gravity="center"
         android:layout_below="@+id/vpIntroSlider"
         android:orientation="horizontal"
-        app:indicatorCount="3" />
+        app:indicatorCount="3" />-->
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_15sdp"
-        app:cardElevation="@dimen/_10sdp"
+        android:layout_margin="@dimen/_10sdp"
         android:id="@+id/cardnews"
-        android:layout_below="@+id/indicatorLayout"
         app:cardCornerRadius="@dimen/_10sdp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtnews"
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:ellipsize="marquee"
-                android:focusableInTouchMode="true"
-                android:gravity="center"
+                android:ellipsize="end"
                 android:marqueeRepeatLimit="marquee_forever"
                 android:scrollHorizontally="true"
-                android:singleLine="true"
                 android:text="@string/app_name"
+                android:singleLine="true"
+                android:layout_gravity="fill_vertical"
+                android:gravity="right"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/logo_color" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 

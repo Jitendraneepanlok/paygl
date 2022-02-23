@@ -23,5 +23,6 @@ data class PayglXXXX(
     val txtphoto: String,
     val txtstateid: String,
     val txttxnpass: String,
-    val txtuserID: String
+    val txtuserID: String,
+    val txttotalamt :String
 )
