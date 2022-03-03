@@ -41,9 +41,10 @@
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/activity_otp_verify.xml" value="0.264" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/activity_spalsh_screen.xml" value="0.25416666666666665" />
-        <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/activity_welcome_slider.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/activity_welcome_slider.xml" value="0.1774580335731415" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/app_bar_dash_board.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/app_bar_otp.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/app_bar_register.xml" value="0.25" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/card_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/content_dash_board.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/custom_logout_layout.xml" value="0.25416666666666665" />
@@ -72,6 +73,7 @@
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/status_layout.xml" value="0.25" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/wallet_layout.xml" value="0.25" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/menu/activity_dash_board_drawer.xml" value="0.4" />
+        <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/menu/dash_board.xml" value="0.25" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14635416666666667" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.14635416666666667" />
       </map>

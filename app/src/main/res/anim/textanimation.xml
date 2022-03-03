@@ -5,7 +5,7 @@
     android:interpolator="@android:anim/linear_interpolator"
     android:repeatCount="infinite"
     android:repeatMode="restart"
-    android:toXDelta="-100">
+    android:toXDelta="-200">
 
 </translate>
 

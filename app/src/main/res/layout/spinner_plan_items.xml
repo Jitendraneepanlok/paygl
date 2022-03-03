@@ -13,22 +13,25 @@
         android:layout_marginEnd="@dimen/_5sdp"
         android:layout_marginBottom="@dimen/_5sdp"
         android:text="@string/app_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/tv_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_data"
         android:layout_below="@+id/tv_price"
-        android:text="@string/app_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textColor="@color/black"
-        android:maxHeight="@dimen/_30sdp"
-        android:layout_margin="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
         android:ellipsize="marquee"
-        android:textAlignment="inherit"/>
+        android:maxHeight="@dimen/_30sdp"
+        android:text="@string/app_name"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/black" />
 
     <View
         android:layout_width="match_parent"

@@ -5,16 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.pay.paygl.Activity.WelcomeSliderActivity">
+    tools:context=".Activity.WelcomeSliderActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/gredient_style"
-        android:paddingBottom="@dimen/_200sdp">
+        android:paddingBottom="@dimen/_250sdp">
 
     </RelativeLayout>
-
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vpIntroSlider"
@@ -22,12 +21,12 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/indicatorLayout" />
 
-    <com.mlm.payment.paygl.Helper.IndicatorLayout
+    <com.bill.payment.glpays.Helper.IndicatorLayout
         android:id="@+id/indicatorLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/ytft"
-        android:layout_marginBottom="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:gravity="center"
         android:orientation="horizontal"
         app:indicatorCount="5" />
@@ -48,6 +47,7 @@
             android:background="@drawable/btn_gredient_style"
             android:gravity="center"
             android:text="Create Account"
+            android:visibility="gone"
             android:textAllCaps="false"
             android:textColor="@color/white" />
 

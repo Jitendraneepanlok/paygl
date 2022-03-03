@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
     <string name="app_name">GLPAYS</string>
     <string name="dialog_msg">Please Wait...</string>
@@ -54,8 +56,8 @@
     <string name="cancel">Cancel</string>
     <string name="yes">Yes</string>
     <string name="change_pass">Change Password</string>
-    <string name="passcode">Passcode</string>
-    <string name="new_passcode">New Passcode</string>
+    <string name="passcode">Old Password</string>
+    <string name="new_passcode">New Password</string>
     <string name="cnf_pass">Confirm Passcode</string>
     <string name="remeber">Remember</string>
     <string name="edit_profile">Edit Profile</string>
@@ -164,6 +166,7 @@
     <string name="txt_opening_balance">Opening Balance </string>
     <string name="total_commission">Total Amount</string>
     <string name="txt_fund_balance">Credit Fund</string>
+    <string name="txt_commission">Commission</string>
 
 
     <string-array name="dth_operator">

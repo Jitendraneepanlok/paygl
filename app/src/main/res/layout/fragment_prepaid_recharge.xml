@@ -186,7 +186,7 @@
                                     android:layout_alignParentLeft="true"
                                     android:background="@color/ripple"
                                     android:backgroundTint="@color/ripple"
-                                    android:drawableLeft="@drawable/ic_smartphone"
+                                    android:drawableLeft="@drawable/ic_rupee"
                                     android:drawablePadding="10dp"
                                     android:hint="@string/enter_ammount"
                                     android:inputType="number"

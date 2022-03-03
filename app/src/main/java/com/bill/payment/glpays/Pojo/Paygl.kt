@@ -1,0 +1,31 @@
+package com.bill.payment.glpays.Pojo
+
+data class Paygl(
+    val News: List<Any>,
+    val resMessage: String,
+    val response: String,
+    val txtLoginID: String,
+    val txtaccno: String,
+    val txtaddress: String,
+    val txtbankid: String,
+    val txtbankname: String,
+    val txtbranch: String,
+    val txtcityid: String,
+    val txtdob: String,
+    val txtemail: String,
+    val txtgender: String,
+    val txtholdername: String,
+    val txtifsccode: String,
+    val txtjoindate: String,
+    val txtmobile: String,
+    val txtname: String,
+    val txtpass: String,
+    val txtstateid: String,
+    val txttxnpass: String,
+    val txtuserID: String,
+    val txtPost :String,
+    val txttotalamt :String,
+    val txtcreditamt :String,
+    val txtcommision :String,
+    val txtopenbal :String
+)

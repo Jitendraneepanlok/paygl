@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mlm.payment.paygl">
+    package="com.bill.payment.glpays">
 
     <supports-screens
         android:anyDensity="true"
@@ -37,31 +37,31 @@
         android:theme="@style/Theme.Paygl">
         <activity
             android:name=".Navigation.DashBoardActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_dash_board"
             android:theme="@style/Theme.Paygl.NoActionBar" />
         <activity
-            android:name="com.pay.paygl.Activity.ForgotActivity"
+            android:name=".Activity.ForgotActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="com.pay.paygl.Activity.OtpVerifyActivity"
+            android:name=".Activity.OtpVerifyActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="com.pay.paygl.Activity.LoginActivity"
+            android:name=".Activity.LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="com.pay.paygl.Activity.RegisterActivity"
+            android:name=".Activity.RegisterActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="com.pay.paygl.Activity.WelcomeSliderActivity"
+            android:name=".Activity.WelcomeSliderActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity

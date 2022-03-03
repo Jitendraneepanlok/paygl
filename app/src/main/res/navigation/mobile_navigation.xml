@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.mlm.payment.paygl.Navigation.ui.home.HomeFragment"
+        android:name="com.bill.payment.glpays.Navigation.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
 
@@ -42,19 +42,19 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.mlm.payment.paygl.Navigation.ui.gallery.GalleryFragment"
+        android:name="com.bill.payment.glpays.Navigation.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.mlm.payment.paygl.Navigation.ui.slideshow.SlideshowFragment"
+        android:name="com.bill.payment.glpays.Navigation.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:id="@+id/nav_add_bank"
-        android:name="com.mlm.payment.paygl.Navigation.ui.addBank.AddBankFragment"
+        android:name="com.bill.payment.glpays.Navigation.ui.addBank.AddBankFragment"
         android:label="@string/menu_addbank"
         tools:layout="@layout/fragment_add_bank" />
 
@@ -62,45 +62,45 @@
 
     <fragment
         android:id="@+id/nav_contact_us"
-        android:name="com.mlm.payment.paygl.Navigation.ui.contactus.ContactusFragment"
+        android:name="com.bill.payment.glpays.Navigation.ui.contactus.ContactusFragment"
         android:label="@string/menu_contactus"
         tools:layout="@layout/fragment_contact_us" />
 
 
     <fragment
         android:id="@+id/nav_kyc"
-        android:name="com.mlm.payment.paygl.Navigation.ui.kyc.KycFragment"
+        android:name="com.bill.payment.glpays.Navigation.ui.kyc.KycFragment"
         android:label="@string/menu_kyc"
         tools:layout="@layout/fragment_kyc" />
 
     <fragment
         android:id="@+id/nav_money_transfer"
-        android:name="com.mlm.payment.paygl.Navigation.ui.moneyTransfer.MoneyTransferFragment"
+        android:name="com.bill.payment.glpays.Navigation.ui.moneyTransfer.MoneyTransferFragment"
         android:label="@string/menu_money_transfer"
         tools:layout="@layout/fragment_money_transfer" />
 
     <fragment
         android:id="@+id/nav_dth"
-        android:name="com.mlm.payment.paygl.Navigation.ui.dth.DthFragment"
+        android:name="com.bill.payment.glpays.Navigation.ui.dth.DthFragment"
         android:label="@string/menu_dth"
         tools:layout="@layout/fragment_dth" />
 
     <fragment
         android:id="@+id/nav_prepaid"
-        android:name="com.mlm.payment.paygl.Navigation.ui.prepaid.PrepaidFragment"
+        android:name="com.bill.payment.glpays.Navigation.ui.prepaid.PrepaidFragment"
         android:label="@string/menu_prepaid_recharge"
         tools:layout="@layout/fragment_prepaid_recharge" />
 
     <fragment
         android:id="@+id/nav_welcome_letter"
-        android:name="com.mlm.payment.paygl.Navigation.ui.welcomelatter.WelcomeLatterFragment"
+        android:name="com.bill.payment.glpays.Navigation.ui.welcomelatter.WelcomeLatterFragment"
         android:label="@string/menu_welcome_letter"
         tools:layout="@layout/fragment_welcome_letter"/>
 
 
     <fragment
         android:id="@+id/nav_add_fund"
-        android:name="com.mlm.payment.paygl.Navigation.ui.addFund.AddFundFragment"
+        android:name="com.bill.payment.glpays.Navigation.ui.addFund.AddFundFragment"
         android:label="@string/menu_add_fund"
         tools:layout="@layout/fragment_add_fund"/>
 </navigation>
