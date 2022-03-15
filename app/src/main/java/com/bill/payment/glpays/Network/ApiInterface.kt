@@ -67,5 +67,8 @@ interface ApiInterface {
     @POST("App_recharge")
     fun getRecharge(@Body user: AppRechargeModel): Call<AppRechargePojo>
 
+    // Summary api
+    @POST("IncomeReport")
+    fun getSummary(@Body user: AppSummaryModel): Call<SummaryPojo>
 
 }

@@ -67,8 +67,7 @@ class ManagePermissions(val activity: Activity, val list: List<String>, val code
 
 
     // Process permissions result
-    fun processPermissionsResult(requestCode: Int, permissions: Array<String>,
-                                 grantResults: IntArray): Boolean {
+    fun processPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray): Boolean {
         var result = 0
         if (grantResults.isNotEmpty()) {
             for (item in grantResults) {

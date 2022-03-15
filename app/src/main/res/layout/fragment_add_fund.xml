@@ -15,7 +15,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/rl1">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -160,7 +161,36 @@
 
             </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rl2"
+                android:layout_below="@+id/rl1"
+                android:layout_margin="@dimen/_5sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvrechargetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fund_details"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvrechargetxt"
+                    android:id="@+id/fundrecycler"
+                    android:layout_margin="@dimen/_5sdp"/>
+
+            </RelativeLayout>
+
+
         </RelativeLayout>
+
+
+
+
 
     </androidx.core.widget.NestedScrollView>
 

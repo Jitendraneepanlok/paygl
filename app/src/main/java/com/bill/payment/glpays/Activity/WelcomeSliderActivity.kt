@@ -40,14 +40,9 @@ class WelcomeSliderActivity : AppCompatActivity() {
         }
 
         // Initialize a list of required permissions to request runtime
-        val list = listOf<String>(
-            Manifest.permission.CAMERA,
-            Manifest.permission.READ_CONTACTS,
+        val list = listOf<String>(Manifest.permission.CAMERA,
             Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.SEND_SMS,
-            Manifest.permission.READ_CALENDAR
-        )
+            Manifest.permission.WRITE_EXTERNAL_STORAGE)
 
         // Initialize a new instance of ManagePermissions class
         managePermissions = ManagePermissions(this, list, PermissionsRequestCode)
@@ -104,8 +99,6 @@ class WelcomeSliderActivity : AppCompatActivity() {
         }
 
         btn_login.setOnClickListener() {
-            //startActivity(Intent(this, LoginActivity::class.java))
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
                 managePermissions.checkPermissions()
         }
@@ -116,8 +109,7 @@ class WelcomeSliderActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
             PermissionsRequestCode -> {
-                val isPermissionsGranted = managePermissions
-                    .processPermissionsResult(requestCode, permissions, grantResults)
+                val isPermissionsGranted = managePermissions.processPermissionsResult(requestCode, permissions, grantResults)
 
                 if (isPermissionsGranted) {
                     // Do the task now

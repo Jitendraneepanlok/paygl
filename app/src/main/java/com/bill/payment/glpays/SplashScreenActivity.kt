@@ -53,13 +53,13 @@ class SplashScreenActivity : AppCompatActivity() {
     private fun checkForInternet(context: Context): Boolean {
 
         // register activity with the connectivity manager service
-        val connectivityManager =
-            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
         // if the android version is equal to M
         // or greater we need to use the
         // NetworkCapabilities to check what type of
         // network has the internet connection
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
             // Returns a Network object corresponding to

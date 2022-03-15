@@ -226,7 +226,10 @@ class HomeFragment : Fragment() {
                                     1 -> navController.navigate(R.id.action_HomeFragment_to_prepaidFragment,bundle)
                                     2 -> navController.navigate(R.id.action_HomeFragment_to_dthFragment,bundle)
                                     7 -> navController.navigate(R.id.action_HomeFragment_to_moneyTransferFragment)
+                                    10 ->navController.navigate(R.id.action_HomeFragment_to_reportFragment)
+                                    11 -> navController.navigate(R.id.action_HomeFragment_to_commissionFragment)
                                     12 -> navController.navigate(R.id.action_HomeFragment_to_addFundFragment)
+                                    13 -> navController.navigate(R.id.action_HomeFragment_to_summaryFragment)
                                     14 -> navController.navigate(R.id.action_HomeFragment_to_galleryFragment)
                                     15 -> CallLogout()
                                 }

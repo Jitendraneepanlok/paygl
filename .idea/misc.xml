@@ -46,11 +46,12 @@
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/app_bar_otp.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/app_bar_register.xml" value="0.25" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/card_layout.xml" value="0.25416666666666665" />
-        <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/content_dash_board.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/content_dash_board.xml" value="0.264" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/custom_logout_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/dashboard_item_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/fragment_add_bank.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/fragment_add_fund.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/fragment_commission.xml" value="0.25" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/fragment_contact_us.xml" value="0.264" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/fragment_dth.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/fragment_gallery.xml" value="0.264" />
@@ -64,13 +65,16 @@
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/fragment_kyc.xml" value="0.264" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/fragment_money_transfer.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/fragment_prepaid_recharge.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/fragment_report.xml" value="0.25" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/fragment_slideshow.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/fragment_summary.xml" value="0.25" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/fragment_welcome_letter.xml" value="0.264" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/nav_header_dash_board.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/other_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/spinner_items.xml" value="0.25" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/spinner_plan_items.xml" value="0.25" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/status_layout.xml" value="0.25" />
+        <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/summary_item_layout.xml" value="0.25" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/layout/wallet_layout.xml" value="0.25" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/menu/activity_dash_board_drawer.xml" value="0.4" />
         <entry key="..\:/Neepanlok Projects/PayGl/Paygl/app/src/main/res/menu/dash_board.xml" value="0.25" />

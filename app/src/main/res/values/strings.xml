@@ -167,6 +167,20 @@
     <string name="total_commission">Total Amount</string>
     <string name="txt_fund_balance">Credit Fund</string>
     <string name="txt_commission">Commission</string>
+    <string name="menu_summary">Summary</string>
+    <string name="user_name">User Name :</string>
+    <string name="trans_id">Transaction Id :</string>
+    <string name="description">Description :</string>
+    <string name="ammountcredit">Amount Credit :</string>
+    <string name="ammountdebit">Amount Debit :</string>
+    <string name="topcode">Operator Code :</string>
+    <string name="decu">Detection :</string>
+    <string name="Date">Date :</string>
+    <string name="recharge_details">Recharge Details :</string>
+    <string name="dth_recharge_details">DTH Recharge Details :</string>
+    <string name="menu_commission">Commission</string>
+    <string name="fund_details">Fund Details :</string>
+    <string name="menu_report">Report</string>
 
 
     <string-array name="dth_operator">

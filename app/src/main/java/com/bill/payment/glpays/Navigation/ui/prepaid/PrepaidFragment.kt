@@ -10,13 +10,17 @@ import androidx.appcompat.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bill.payment.glpays.Adapter.OperatorPlanAdapter
 import com.bill.payment.glpays.Adapter.PlanAdapter
+import com.bill.payment.glpays.Adapter.SummaryAdapter
 import com.bill.payment.glpays.Helper.SessionManager
 import com.bill.payment.glpays.Model.*
 import com.bill.payment.glpays.Model.PayglXXXXXXXXX
 import com.bill.payment.glpays.Model.PayglXXXXXXXXXX
 import com.bill.payment.glpays.Model.PayglXXXXXXXXXXX
+import com.bill.payment.glpays.Model.PayglXXXXXXXXXXXX
 import com.bill.payment.glpays.Network.ApiClient
 import com.bill.payment.glpays.Pojo.*
 import com.bill.payment.glpays.R
@@ -37,18 +41,17 @@ class PrepaidFragment : Fragment() {
     private lateinit var dashboardid: String
     private lateinit var selectedoperator: String
     private lateinit var selectedoperatorPrice: String
-
     private lateinit var etplan: AppCompatTextView
     private lateinit var btnpay: AppCompatButton
     private lateinit var etamount: AppCompatEditText
     private lateinit var etnumber: AppCompatEditText
     private lateinit var strinbuilder: StringBuilder
     private lateinit var spinplan: AppCompatSpinner
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    private lateinit var rechargerecycler :RecyclerView
+    private lateinit var adapter: SummaryAdapter
+    private var summaryList = mutableListOf<IncomeReport>()
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         prepaidModel = ViewModelProvider(this).get(PrepaidModel::class.java)
         _binding = FragmentPrepaidRechargeBinding.inflate(inflater, container, false)
         sessionManager = SessionManager(activity)
@@ -64,7 +67,63 @@ class PrepaidFragment : Fragment() {
          })*/
         initView()
         getOperator()
+
+        getRechargeDetails()
         return root
+    }
+
+    private fun getRechargeDetails() {
+        rechargerecycler = binding.rechargerecycler
+        var LayoutManager = LinearLayoutManager(activity,  LinearLayoutManager.VERTICAL, false)
+        rechargerecycler.layoutManager = LayoutManager
+
+        val pDialog = ProgressDialog(activity)
+        pDialog.setMessage(activity?.getString(R.string.dialog_msg));
+        pDialog.setCancelable(false);
+        pDialog.show();
+
+        val apiInterface = ApiClient.getClient.getSummary(AppSummaryModel(PayglXXXXXXXXXXXX("4",user_id)))
+
+        apiInterface.enqueue(object : retrofit2.Callback<SummaryPojo> {
+
+            override fun onResponse(call: Call<SummaryPojo>, response: Response<SummaryPojo>) {
+
+                if (response.isSuccessful) {
+                    Log.e("Response", "" + response.body()?.Paygl?.response)
+                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    adapter = activity?.let { SummaryAdapter(it) }!!
+                    rechargerecycler.adapter = adapter
+                    response.body()?.Paygl?.let {
+                        summaryList.clear()
+                        summaryList.addAll(it?.IncomeReport)
+                        adapter.setsummaryList(summaryList)
+                        adapter.notifyDataSetChanged()
+                    }
+                    adapter.setOnItemClickListner(object : SummaryAdapter.onItemClickedListner {
+                        override fun onItemclicked(position: Int,incomeReport: IncomeReport) {
+                            Log.e("itemPosition",""+position)
+
+                            /*  dashboardId = service.txtid
+                              val bundle = Bundle()
+                              bundle.putString("DasgboardItemClicked_ID",dashboardId)*/
+
+                        }
+                    })
+                    pDialog.dismiss()
+                } else {
+                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                        .show()
+                    pDialog.dismiss()
+                }
+            }
+
+            override fun onFailure(call: Call<SummaryPojo>, t: Throwable) {
+                Toast.makeText(activity, "" + t, Toast.LENGTH_SHORT).show()
+                Log.e("ResponseFail", "" + t)
+                pDialog.dismiss()
+            }
+        })
+
     }
 
     private fun getOperator() {

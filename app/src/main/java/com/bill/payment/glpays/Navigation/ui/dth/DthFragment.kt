@@ -12,15 +12,20 @@ import androidx.appcompat.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bill.payment.glpays.Adapter.OperatorPlanAdapter
 import com.bill.payment.glpays.Adapter.PlanAdapter
+import com.bill.payment.glpays.Adapter.SummaryAdapter
 import com.bill.payment.glpays.Helper.SessionManager
 import com.bill.payment.glpays.Model.*
 import com.bill.payment.glpays.Model.PayglXXXXXXXXX
 import com.bill.payment.glpays.Model.PayglXXXXXXXXXX
 import com.bill.payment.glpays.Model.PayglXXXXXXXXXXX
+import com.bill.payment.glpays.Model.PayglXXXXXXXXXXXX
 import com.bill.payment.glpays.Network.ApiClient
 import com.bill.payment.glpays.Pojo.*
+import com.bill.payment.glpays.R
 import com.bill.payment.glpays.databinding.FragmentDthBinding
 import retrofit2.Call
 import retrofit2.Response
@@ -45,6 +50,10 @@ class DthFragment : Fragment() {
     private lateinit var etnumber: AppCompatEditText
     private lateinit var selectedoperatorPrice: String
 
+    lateinit var dthrecycler : RecyclerView
+    private lateinit var adapter: SummaryAdapter
+    private var summaryList = mutableListOf<IncomeReport>()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         dthModel = ViewModelProvider(this).get(DthModel::class.java)
         _binding = FragmentDthBinding.inflate(inflater, container, false)
@@ -63,6 +72,7 @@ class DthFragment : Fragment() {
         getOperator()
 
         initView()
+        getDthDetails()
         return root
     }
     private fun getOperator() {
@@ -152,6 +162,7 @@ class DthFragment : Fragment() {
 
 
     }
+
     private fun CallPlanApi(selectedoperator: String) {
         Log.e("selectedId", "" + selectedoperator)
         val pDialog = ProgressDialog(activity)
@@ -297,5 +308,60 @@ class DthFragment : Fragment() {
 
 
     }
+
+    private fun getDthDetails() {
+        dthrecycler = binding.dthrecycler
+        var LayoutManager = LinearLayoutManager(activity,  LinearLayoutManager.VERTICAL, false)
+        dthrecycler.layoutManager = LayoutManager
+
+        val pDialog = ProgressDialog(activity)
+        pDialog.setMessage(activity?.getString(R.string.dialog_msg));
+        pDialog.setCancelable(false);
+        pDialog.show();
+
+        val apiInterface = ApiClient.getClient.getSummary(AppSummaryModel(PayglXXXXXXXXXXXX("5",user_id)))
+
+        apiInterface.enqueue(object : retrofit2.Callback<SummaryPojo> {
+
+            override fun onResponse(call: Call<SummaryPojo>, response: Response<SummaryPojo>) {
+
+                if (response.isSuccessful) {
+                    Log.e("Response", "" + response.body()?.Paygl?.response)
+                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    adapter = activity?.let { SummaryAdapter(it) }!!
+                    dthrecycler.adapter = adapter
+                    response.body()?.Paygl?.let {
+                        summaryList.clear()
+                        summaryList.addAll(it?.IncomeReport)
+                        adapter.setsummaryList(summaryList)
+                        adapter.notifyDataSetChanged()
+                    }
+                    adapter.setOnItemClickListner(object : SummaryAdapter.onItemClickedListner {
+                        override fun onItemclicked(position: Int,incomeReport: IncomeReport) {
+                            Log.e("itemPosition",""+position)
+
+                            /*  dashboardId = service.txtid
+                              val bundle = Bundle()
+                              bundle.putString("DasgboardItemClicked_ID",dashboardId)*/
+
+                        }
+                    })
+                    pDialog.dismiss()
+                } else {
+                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                        .show()
+                    pDialog.dismiss()
+                }
+            }
+
+            override fun onFailure(call: Call<SummaryPojo>, t: Throwable) {
+                Toast.makeText(activity, "" + t, Toast.LENGTH_SHORT).show()
+                Log.e("ResponseFail", "" + t)
+                pDialog.dismiss()
+            }
+        })
+
+    }
+
 
 }
