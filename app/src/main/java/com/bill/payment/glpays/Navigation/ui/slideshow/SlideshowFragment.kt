@@ -90,20 +90,20 @@ class SlideshowFragment : Fragment() {
             ) {
                 if (response.isSuccessful) {
                     pDialog.dismiss()
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
-                    if (response.body()?.Paygl?.txtpass != null) {
-                        oldpassword = response.body()?.Paygl?.txtpass.toString()
+                    if (response.body()?.GLPAYS?.txtpass != null) {
+                        oldpassword = response.body()?.GLPAYS?.txtpass.toString()
                     }
 
-                    if (response.body()?.Paygl?.txttxnpass != null) {
-                        txtnpassword = response.body()?.Paygl?.txttxnpass.toString()
+                    if (response.body()?.GLPAYS?.txttxnpass != null) {
+                        txtnpassword = response.body()?.GLPAYS?.txttxnpass.toString()
                     }
 
 
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 }
@@ -155,12 +155,12 @@ class SlideshowFragment : Fragment() {
             override fun onResponse(call: Call<ChangePasswordResponse>, response: Response<ChangePasswordResponse>) {
                 if (response.isSuccessful) {
                     pDialog.dismiss()
-                    Log.e("Login Response", "" + response.body()?.Paygl?.response)
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Log.e("Login Response", "" + response.body()?.GLPAYS?.response)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 }

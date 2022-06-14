@@ -68,11 +68,11 @@ class ForgotActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ForgetPasswordResponse>, response: Response<ForgetPasswordResponse>) {
 
                 if (response.isSuccessful) {
-                    Log.e("Login Response", "" + response.body()?.Paygl?.response)
-                    Toast.makeText(applicationContext,response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Log.e("Login Response", "" + response.body()?.GLPAYS?.response)
+                    Toast.makeText(applicationContext,response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     pDialog.dismiss()
                 } else {
-                    Toast.makeText(applicationContext,response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     pDialog.dismiss()
                 }
             }

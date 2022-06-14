@@ -85,10 +85,10 @@ class DthFragment : Fragment() {
         apiInterface.enqueue(object : retrofit2.Callback<OperatorResponse> {
             override fun onResponse(call: Call<OperatorResponse>, response: Response<OperatorResponse>) {
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
                     operatorlist = ArrayList()
                     if (operatorlist!=null){
-                        response.body()?.Paygl?.let { operatorlist!!.addAll(it?.operator) }
+                        response.body()?.GLPAYS?.let { operatorlist!!.addAll(it?.operator) }
                         val customDropDownAdapter = PlanAdapter(activity, operatorlist!!)
                         spinopratore.adapter = customDropDownAdapter
                         customDropDownAdapter.notifyDataSetChanged()
@@ -97,7 +97,7 @@ class DthFragment : Fragment() {
                     pDialog.dismiss()
 
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     pDialog.dismiss()
                 }
             }
@@ -174,12 +174,12 @@ class DthFragment : Fragment() {
         apiInterface.enqueue(object : retrofit2.Callback<PlanResponse> {
             override fun onResponse(call: Call<PlanResponse>, response: Response<PlanResponse>) {
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     planname = ArrayList()
 
                     if (planname != null) {
-                        response.body()?.Paygl?.let { planname!!.addAll(it?.ViewPlan) }
+                        response.body()?.GLPAYS?.let { planname!!.addAll(it?.ViewPlan) }
                         val adapter = OperatorPlanAdapter(activity, planname!!)
 
                         spinplan.adapter = adapter
@@ -190,14 +190,14 @@ class DthFragment : Fragment() {
                     }
                    /* planname = ArrayList()
                     if (planname!=null){
-                        response.body()?.Paygl?.let { planname!!.addAll(it?.ViewPlan) }
+                        response.body()?.GLPAYS?.let { planname!!.addAll(it?.ViewPlan) }
                         for (i in 0 until planname!!.size) {
-                            etplan.setText(response.body()?.Paygl?.ViewPlan?.get(i)?.txtplanamt +"\n"+ response.body()?.Paygl?.ViewPlan?.get(i)?.txtplandesc)
+                            etplan.setText(response.body()?.GLPAYS?.ViewPlan?.get(i)?.txtplanamt +"\n"+ response.body()?.GLPAYS?.ViewPlan?.get(i)?.txtplandesc)
                         }*/
                         pDialog.dismiss()
 
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 }
@@ -236,15 +236,15 @@ class DthFragment : Fragment() {
         apiInterface.enqueue(object : retrofit2.Callback<AppRechargePojo> {
             override fun onResponse(call: Call<AppRechargePojo>, response: Response<AppRechargePojo>) {
                 if (response.isSuccessful) {
-                    Log.e("RechargeResponse", "" + response.body()?.Paygl?.response)
+                    Log.e("RechargeResponse", "" + response.body()?.GLPAYS?.response)
 
-                    if (response.body()?.Paygl?.recharge_status!=null) {
-                        callStatusDialog(response.body()?.Paygl?.recharge_status)
+                    if (response.body()?.GLPAYS?.recharge_status!=null) {
+                        callStatusDialog(response.body()?.GLPAYS?.recharge_status)
                     }
                     pDialog.dismiss()
 
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     pDialog.dismiss()
                 }
             }
@@ -326,11 +326,11 @@ class DthFragment : Fragment() {
             override fun onResponse(call: Call<SummaryPojo>, response: Response<SummaryPojo>) {
 
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     adapter = activity?.let { SummaryAdapter(it) }!!
                     dthrecycler.adapter = adapter
-                    response.body()?.Paygl?.let {
+                    response.body()?.GLPAYS?.let {
                         summaryList.clear()
                         summaryList.addAll(it?.IncomeReport)
                         adapter.setsummaryList(summaryList)
@@ -348,7 +348,7 @@ class DthFragment : Fragment() {
                     })
                     pDialog.dismiss()
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 }

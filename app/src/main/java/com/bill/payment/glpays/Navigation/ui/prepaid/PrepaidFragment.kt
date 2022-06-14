@@ -89,11 +89,11 @@ class PrepaidFragment : Fragment() {
             override fun onResponse(call: Call<SummaryPojo>, response: Response<SummaryPojo>) {
 
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     adapter = activity?.let { SummaryAdapter(it) }!!
                     rechargerecycler.adapter = adapter
-                    response.body()?.Paygl?.let {
+                    response.body()?.GLPAYS?.let {
                         summaryList.clear()
                         summaryList.addAll(it?.IncomeReport)
                         adapter.setsummaryList(summaryList)
@@ -111,7 +111,7 @@ class PrepaidFragment : Fragment() {
                     })
                     pDialog.dismiss()
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 }
@@ -136,10 +136,10 @@ class PrepaidFragment : Fragment() {
         apiInterface.enqueue(object : retrofit2.Callback<OperatorResponse> {
             override fun onResponse(call: Call<OperatorResponse>, response: Response<OperatorResponse>) {
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
                     operatorlist = ArrayList()
                     if (operatorlist != null) {
-                        response.body()?.Paygl?.let { operatorlist!!.addAll(it?.operator) }
+                        response.body()?.GLPAYS?.let { operatorlist!!.addAll(it?.operator) }
                         val customDropDownAdapter = PlanAdapter(activity, operatorlist!!)
                         spinopratore.adapter = customDropDownAdapter
                         customDropDownAdapter.notifyDataSetChanged()
@@ -148,7 +148,7 @@ class PrepaidFragment : Fragment() {
                     pDialog.dismiss()
 
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 }
@@ -220,14 +220,14 @@ class PrepaidFragment : Fragment() {
         apiInterface.enqueue(object : retrofit2.Callback<PlanResponse> {
             override fun onResponse(call: Call<PlanResponse>, response: Response<PlanResponse>) {
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
                     planname = ArrayList()
 
                    var viewPlan :ViewPlan = ViewPlan("Select one","","")
                     planname?.add(viewPlan)
 
                     if (planname != null) {
-                        response.body()?.Paygl?.let { planname!!.addAll(it?.ViewPlan,) }
+                        response.body()?.GLPAYS?.let { planname!!.addAll(it?.ViewPlan,) }
                          val adapter = OperatorPlanAdapter(activity, planname!!)
                         spinplan.adapter = adapter
 
@@ -239,7 +239,7 @@ class PrepaidFragment : Fragment() {
                     /*strinbuilder = StringBuilder()
                     for (i in planname!!.indices) {
                         val aa: String =
-                            response.body()?.Paygl?.ViewPlan?.get(i)?.txtplanamt.toString() + "" + response.body()?.Paygl?.ViewPlan?.get(
+                            response.body()?.GLPAYS?.ViewPlan?.get(i)?.txtplanamt.toString() + "" + response.body()?.GLPAYS?.ViewPlan?.get(
                                 i
                             )?.txtplandesc.toString()
                         Log.e("aa", "" + aa);
@@ -251,7 +251,7 @@ class PrepaidFragment : Fragment() {
                     pDialog.dismiss()
 
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     pDialog.dismiss()
                 }
             }
@@ -300,14 +300,14 @@ class PrepaidFragment : Fragment() {
                 response: Response<AppRechargePojo>
             ) {
                 if (response.isSuccessful) {
-                    Log.e("RechargeResponse", "" + response.body()?.Paygl?.response)
+                    Log.e("RechargeResponse", "" + response.body()?.GLPAYS?.response)
 
-                    callStatusDialog(response.body()?.Paygl?.recharge_status)
+                    callStatusDialog(response.body()?.GLPAYS?.recharge_status)
 
                     pDialog.dismiss()
 
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 }

@@ -86,25 +86,25 @@ class WelcomeLatterFragment : Fragment() {
 
             override fun onResponse(call: Call<UserDetailsResponse>, response: Response<UserDetailsResponse>) {
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
-//                    Toast.makeText(applicationContext, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
+//                    Toast.makeText(applicationContext, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
 
-                    if (response.body()?.Paygl?.txtname != null) {
-                        txtAssociateName.setText("Associate Name :  "+response.body()?.Paygl?.txtname)
+                    if (response.body()?.GLPAYS?.txtname != null) {
+                        txtAssociateName.setText("Associate Name :  "+response.body()?.GLPAYS?.txtname)
 
                     }
-                    if (response.body()?.Paygl?. txtLoginID!= null) {
-                        txtAssociateid.setText("Associate ID :  "+response.body()?.Paygl?.txtemail)
+                    if (response.body()?.GLPAYS?. txtLoginID!= null) {
+                        txtAssociateid.setText("Associate ID :  "+response.body()?.GLPAYS?.txtemail)
                     }
 
-                    if (response.body()?.Paygl?. txtjoindate!= null) {
-                        tvjoiningdate.setText("Joining Date :  "+response.body()?.Paygl?.txtemail)
+                    if (response.body()?.GLPAYS?. txtjoindate!= null) {
+                        tvjoiningdate.setText("Joining Date :  "+response.body()?.GLPAYS?.txtemail)
                     }
 
                     pDialog.dismiss()
 
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     pDialog.dismiss()
                 }
             }

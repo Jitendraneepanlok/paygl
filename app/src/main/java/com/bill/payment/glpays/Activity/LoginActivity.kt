@@ -100,30 +100,29 @@ class LoginActivity : AppCompatActivity() {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
 
                 if (response.isSuccessful) {
-                    if (response.body()?.Paygl?.resMessage.equals("1")) {
-                        Log.e("Response", "" + response.body()?.Paygl?.response)
-                        Toast.makeText(applicationContext, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    if (response.body()?.GLPAYS?.resMessage.equals("1")) {
+                        Log.e("Response", "" + response.body()?.GLPAYS?.response)
+                        Toast.makeText(applicationContext, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                         sessionManager = SessionManager(applicationContext)
                         sessionManager.setValueBoolean(SessionManager.VALUE, ischecked)
-                        sessionManager.setValue(SessionManager.User_Id, response.body()?.Paygl?.txtuserID)
-                        sessionManager.setValue(SessionManager.Login_Id, response.body()?.Paygl?.txtLoginID)
-                        sessionManager.setValue(SessionManager.POST,response.body()?.Paygl?.txtPost)
-                        sessionManager.setValue(SessionManager.COMMISION,response.body()?.Paygl?.txtcommision)
-                        sessionManager.setValue(SessionManager.TOTAL_AMOUNT,response.body()?.Paygl?.txttotalamt)
-                        sessionManager.setValue(SessionManager.CREDIT_AMOUNT,response.body()?.Paygl?.txtcreditamt)
-                        sessionManager.setValue(SessionManager.OPEN_BALANCE,response.body()?.Paygl?.txtopenbal)
-
+                        sessionManager.setValue(SessionManager.User_Id, response.body()?.GLPAYS?.txtuserID)
+                        sessionManager.setValue(SessionManager.Login_Id, response.body()?.GLPAYS?.txtLoginID)
+                        sessionManager.setValue(SessionManager.POST,response.body()?.GLPAYS?.txtPost)
+                        sessionManager.setValue(SessionManager.COMMISION,response.body()?.GLPAYS?.txtcommision)
+                        sessionManager.setValue(SessionManager.TOTAL_AMOUNT,response.body()?.GLPAYS?.txttotalamt)
+                        sessionManager.setValue(SessionManager.CREDIT_AMOUNT,response.body()?.GLPAYS?.txtcreditamt)
+                        sessionManager.setValue(SessionManager.OPEN_BALANCE,response.body()?.GLPAYS?.txtopenbal)
 
                         callnewPage()
                         pDialog.dismiss()
                     }else{
-                        Toast.makeText(applicationContext, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                         pDialog.dismiss()
                     }
                 } else {
                     Toast.makeText(
                         applicationContext,
-                        response.body()?.Paygl?.response,
+                        response.body()?.GLPAYS?.response,
                         Toast.LENGTH_SHORT
                     ).show()
                     pDialog.dismiss()

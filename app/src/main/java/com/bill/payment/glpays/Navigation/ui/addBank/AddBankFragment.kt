@@ -135,12 +135,12 @@ class AddBankFragment : Fragment() {
                 response: Response<AddBankDetailsResponse>
             ) {
                 if (response.isSuccessful) {
-                    Log.e("BankResponse", "" + response.body()?.Paygl?.response)
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Log.e("BankResponse", "" + response.body()?.GLPAYS?.response)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 }

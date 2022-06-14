@@ -6,6 +6,7 @@ import retrofit2.Call
 import retrofit2.http.*
 import okhttp3.RequestBody
 import okhttp3.MultipartBody
+import okhttp3.ResponseBody
 import retrofit2.http.POST
 import retrofit2.http.Multipart
 
@@ -13,6 +14,9 @@ interface ApiInterface {
 
     @POST("Login")
      fun PostLogin(@Body user: LoginModel): Call<LoginResponse>
+
+    @POST("Login")
+    fun PostLoginR(@Body user: LoginModel): Call<ResponseBody>
 
     @POST("Registration")
     fun PostSignUp(@Body user: RegisterationModel): Call<RegistrationResponse>

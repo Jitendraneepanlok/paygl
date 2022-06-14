@@ -69,11 +69,11 @@ class AddFundFragment : Fragment() {
             override fun onResponse(call: Call<SummaryPojo>, response: Response<SummaryPojo>) {
 
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     adapter = activity?.let { SummaryAdapter(it) }!!
                     fundrecycler.adapter = adapter
-                    response.body()?.Paygl?.let {
+                    response.body()?.GLPAYS?.let {
                         summaryList.clear()
                         summaryList.addAll(it?.IncomeReport)
                         adapter.setsummaryList(summaryList)
@@ -91,7 +91,7 @@ class AddFundFragment : Fragment() {
                     })
                     pDialog.dismiss()
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 }

@@ -1,5 +1,5 @@
 package com.bill.payment.glpays.Pojo
 
 data class PlanResponse(
-    val Paygl: PayglXXXXXXXXXXX
+    val GLPAYS: PayglXXXXXXXXXXX
 )

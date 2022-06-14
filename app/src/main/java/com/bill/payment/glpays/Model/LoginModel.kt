@@ -1,5 +1,6 @@
 package com.bill.payment.glpays.Model
 
 data class LoginModel(
-    val Paygl: Paygl
+    //val Paygl: Paygl
+    val GLPAYS: Paygl
 )

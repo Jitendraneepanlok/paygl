@@ -100,8 +100,8 @@ class HomeFragment : Fragment() {
             override fun onResponse(call: Call<UserDetailsResponse>, response: Response<UserDetailsResponse>) {
 
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
-                    var arraylist = ArrayList(response.body()?.Paygl?.News)
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
+                    var arraylist = ArrayList(response.body()?.GLPAYS?.News)
                     var asdds=StringBuffer()
                     for (i in arraylist) {
 
@@ -112,7 +112,7 @@ class HomeFragment : Fragment() {
                     txtnews.startAnimation(animation)
                     pDialog.dismiss()
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     pDialog.dismiss()
                 }
             }
@@ -199,16 +199,16 @@ class HomeFragment : Fragment() {
             override fun onResponse(call: Call<DashBoardPageResponse>, response: Response<DashBoardPageResponse>) {
 
                 if (response.isSuccessful) {
-                    if (response.body()?.Paygl?.resMessage.equals("1")) {
-                        Log.e("Response", "" + response.body()?.Paygl?.response)
+                    if (response.body()?.GLPAYS?.resMessage.equals("1")) {
+                        Log.e("Response", "" + response.body()?.GLPAYS?.response)
                         Toast.makeText(
                             activity,
-                            response.body()?.Paygl?.response,
+                            response.body()?.GLPAYS?.response,
                             Toast.LENGTH_SHORT
                         ).show()
                         adapter = activity?.let { DashBoardAdapter(it) }!!
                         homerecycler.adapter = adapter
-                        response.body()?.Paygl?.let {
+                        response.body()?.GLPAYS?.let {
                             dataList.clear()
                             dataList.addAll(it?.Services)
                             adapter.setDataList(dataList)
@@ -240,14 +240,14 @@ class HomeFragment : Fragment() {
                     } else {
                         Toast.makeText(
                             activity,
-                            response.body()?.Paygl?.response,
+                            response.body()?.GLPAYS?.response,
                             Toast.LENGTH_SHORT
                         ).show()
                         pDialog.dismiss()
                     }
 
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 }
@@ -308,10 +308,10 @@ class HomeFragment : Fragment() {
                 response: Response<LogoutResponse>
             ) {
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
                     Toast.makeText(
                         activity,
-                        response.body()?.Paygl?.response,
+                        response.body()?.GLPAYS?.response,
                         Toast.LENGTH_SHORT
                     ).show()
 
@@ -320,7 +320,7 @@ class HomeFragment : Fragment() {
                 } else {
                     Toast.makeText(
                         activity,
-                        response.body()?.Paygl?.response,
+                        response.body()?.GLPAYS?.response,
                         Toast.LENGTH_SHORT
                     ).show()
                     pDialog.dismiss()

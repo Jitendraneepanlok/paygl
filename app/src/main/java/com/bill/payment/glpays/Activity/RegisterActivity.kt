@@ -98,12 +98,12 @@ class RegisterActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<RegistrationResponse>, response: Response<RegistrationResponse>) {
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
-                    Toast.makeText(applicationContext, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
-                    callnewPage(response.body()?.Paygl?.txtmobile.toString())
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
+                    Toast.makeText(applicationContext, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
+                    callnewPage(response.body()?.GLPAYS?.txtmobile.toString())
                     pDialog.dismiss()
                 } else {
-                    Toast.makeText(applicationContext, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     pDialog.dismiss()
                 }
             }

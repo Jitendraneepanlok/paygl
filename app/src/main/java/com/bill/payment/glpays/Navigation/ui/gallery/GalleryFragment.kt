@@ -271,11 +271,11 @@ class GalleryFragment : Fragment() {
         apiInterface.enqueue(object : retrofit2.Callback<UpdateprofilePicPojo> {
             override fun onResponse(call: Call<UpdateprofilePicPojo>, response: Response<UpdateprofilePicPojo>) {
                 if (response.isSuccessful) {
-                    Log.e("PickResponse", "" + response.body()?.Paygl?.response)
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Log.e("PickResponse", "" + response.body()?.GLPAYS?.response)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     pDialog.dismiss()
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT).show()
                     pDialog.dismiss()
                 }
             }
@@ -364,32 +364,32 @@ class GalleryFragment : Fragment() {
             ) {
 
                 if (response.isSuccessful) {
-                    Log.e("Login Response", "" + response.body()?.Paygl?.response)
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Log.e("Login Response", "" + response.body()?.GLPAYS?.response)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
 
-                    if (response.body()?.Paygl?.txtname != null) {
-                        textUserName.setText("Hi "+response.body()?.Paygl?.txtname)
-                        etname.setText(response.body()?.Paygl?.txtname)
+                    if (response.body()?.GLPAYS?.txtname != null) {
+                        textUserName.setText("Hi "+response.body()?.GLPAYS?.txtname)
+                        etname.setText(response.body()?.GLPAYS?.txtname)
 
                     }
-                    if (response.body()?.Paygl?.txtemail != null) {
-                        textEmail.setText(response.body()?.Paygl?.txtemail)
-                        etemail.setText(response.body()?.Paygl?.txtemail)
+                    if (response.body()?.GLPAYS?.txtemail != null) {
+                        textEmail.setText(response.body()?.GLPAYS?.txtemail)
+                        etemail.setText(response.body()?.GLPAYS?.txtemail)
                     }
-                    if (response.body()?.Paygl?.txtdob != null){
-                        etdob.setText(response.body()?.Paygl?.txtdob)
+                    if (response.body()?.GLPAYS?.txtdob != null){
+                        etdob.setText(response.body()?.GLPAYS?.txtdob)
                     }
 
-                    if (response.body()?.Paygl?.txtmobile!=null){
-                        etmobile.setText(response.body()?.Paygl?.txtmobile)
+                    if (response.body()?.GLPAYS?.txtmobile!=null){
+                        etmobile.setText(response.body()?.GLPAYS?.txtmobile)
                     }
 
                     pDialog.dismiss()
 
                     /*  val img_user = viewOfLayout.findViewById<CircleImageView>(R.id.img_user)
 
-                      val media = response.body()?.Paygl?.txtphoto
+                      val media = response.body()?.GLPAYS?.txtphoto
                       if (media !== null) {
                           activity?.let {
                               Glide.with(it)
@@ -402,7 +402,7 @@ class GalleryFragment : Fragment() {
                       }*/
 
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 }
@@ -461,12 +461,12 @@ class GalleryFragment : Fragment() {
 
             override fun onResponse(call: Call<UpdateProfileResponse>, response: Response<UpdateProfileResponse>) {
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 } else {
-                    Toast.makeText(activity, response.body()?.Paygl?.response, Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, response.body()?.GLPAYS?.response, Toast.LENGTH_SHORT)
                         .show()
                     pDialog.dismiss()
                 }

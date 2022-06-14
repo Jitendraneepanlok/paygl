@@ -222,10 +222,10 @@ class DashBoardActivity : AppCompatActivity() {
                 response: Response<LogoutResponse>
             ) {
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
                     Toast.makeText(
                         applicationContext,
-                        response.body()?.Paygl?.response,
+                        response.body()?.GLPAYS?.response,
                         Toast.LENGTH_SHORT
                     ).show()
 
@@ -234,7 +234,7 @@ class DashBoardActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(
                         applicationContext,
-                        response.body()?.Paygl?.response,
+                        response.body()?.GLPAYS?.response,
                         Toast.LENGTH_SHORT
                     ).show()
                     pDialog.dismiss()
@@ -268,25 +268,25 @@ class DashBoardActivity : AppCompatActivity() {
             override fun onResponse(call: Call<UserDetailsResponse>, response: Response<UserDetailsResponse>) {
 
                 if (response.isSuccessful) {
-                    Log.e("Response", "" + response.body()?.Paygl?.response)
+                    Log.e("Response", "" + response.body()?.GLPAYS?.response)
 
-                    ProfileName = response.body()?.Paygl?.txtname.toString()
+                    ProfileName = response.body()?.GLPAYS?.txtname.toString()
 
-                    if (response.body()?.Paygl?.txtname != null) {
-                        tvprofilename.setText(response.body()?.Paygl?.txtname +"("+sessionManager.getUserData(SessionManager.POST)+")")
-
-                    }
-                    if (response.body()?.Paygl?.txtemail != null) {
-                        tvprofileEmail.setText(response.body()?.Paygl?.txtemail)
-                    }
-
-                    if (response.body()?.Paygl?.txttotalamt != null) {
-                        Log.e("txttotalamt", "" +response.body()?.Paygl?.txttotalamt)
-                        walletavailableamount = response.body()?.Paygl?.txttotalamt.toString()
+                    if (response.body()?.GLPAYS?.txtname != null) {
+                        tvprofilename.setText(response.body()?.GLPAYS?.txtname +"("+sessionManager.getUserData(SessionManager.POST)+")")
 
                     }
+                    if (response.body()?.GLPAYS?.txtemail != null) {
+                        tvprofileEmail.setText(response.body()?.GLPAYS?.txtemail)
+                    }
 
-                    val media = response.body()?.Paygl?.txtphoto
+                    if (response.body()?.GLPAYS?.txttotalamt != null) {
+                        Log.e("txttotalamt", "" +response.body()?.GLPAYS?.txttotalamt)
+                        walletavailableamount = response.body()?.GLPAYS?.txttotalamt.toString()
+
+                    }
+
+                    val media = response.body()?.GLPAYS?.txtphoto
                     if (media !== null) {
                         applicationContext?.let {
                             Glide.with(it)
@@ -307,7 +307,7 @@ class DashBoardActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(
                         applicationContext,
-                        response.body()?.Paygl?.response,
+                        response.body()?.GLPAYS?.response,
                         Toast.LENGTH_SHORT
                     )
                         .show()
